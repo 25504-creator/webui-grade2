@@ -7,7 +7,18 @@
     <body>
         <h1>Welcome to My Web Page</h1>
         <p>This is a simple web page.</p>
-        <button id="myButton">Click Me</button>
-        <script src="/main.js"></script>
+        <button onclick="myButton()">Click Me</button>
+        <button onclick="Play_Boy()">Play Boy Audio</button>
+
+        <!-- counter section -->
+        <p id="mycounter">0</p>
+        <button onclick="increment()">+1</button>
+
+        <button onclick="decrement()">-1</button>
+        <button onclick="reset()">Reset</button>
+
+
+        <script src="main.js"></script>
+        <script src="counter.js"></script>
     </body>
 </html>
