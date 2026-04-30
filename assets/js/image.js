@@ -1,5 +1,11 @@
-let isCat = true;
+let name = "Alice";
+let number = 1;
+let flag = true;
+let flag2 = false;
 
+
+
+let isCat = true;
 function changePic() {
   const img = document.getElementById('photo');
   if (isCat) {
@@ -9,3 +15,4 @@ function changePic() {
   }
   isCat = !isCat;
 }
+setInterval(changePic, 3000);
