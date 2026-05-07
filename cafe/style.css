@@ -6,8 +6,8 @@
 :root{
   --main-color:   #78350F; /* メインの色（濃い茶色） */
   --accent-color: #F59E0B; /* アクセントの色（オレンジ） */
-  --bg-color:     #7b9438; /* ページ全体の背景色（クリーム色） */
-  --text-color:   #1F2937; /* 文字色（濃いグレー） */
+  --bg-color:     #dff72c; /* ページ全体の背景色（クリーム色） */
+  --text-color:   #ffffff; /* 文字色（濃いグレー） */
   --card-color:   #FFFFFF; /* カードやヘッダーの白 */
   --muted-color:  #6B7280; /* 説明文や枠線の控えめなグレー */
 }
@@ -27,10 +27,17 @@ header{
 }
 nav{
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
     gap: 24px;
+}
+#hero{
+    background-image:
+    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), /* 黒い半透明（文字を読みやすく） */
+    url("https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=1600&h=900&fit=crop&auto=format&q=80"); /* 背景写真 */
+    text-align: center;
+    padding: 140px 24px;
+    color: var(--text-color);
+    background-size: cover;
+    text-align: center;
 }
 
     
