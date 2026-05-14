@@ -4,9 +4,9 @@
     box-sizing: border-box;
 }
 :root{
-  --main-color:   #78350F; /* メインの色（濃い茶色） */
+  --main-color:   #e48817; /* メインの色（濃い茶色） */
   --accent-color: #F59E0B; /* アクセントの色（オレンジ） */
-  --bg-color:     #dff72c; /* ページ全体の背景色（クリーム色） */
+  --bg-color:     #f0f3d9; /* ページ全体の背景色（クリーム色） */
   --text-color:   #ffffff; /* 文字色（濃いグレー） */
   --card-color:   #FFFFFF; /* カードやヘッダーの白 */
   --muted-color:  #6B7280; /* 説明文や枠線の控えめなグレー */
@@ -14,7 +14,6 @@
 body{
     font-family: 'Arial', sans-serif;
     background-color: var(--bg-color);
-   
 }
 
 header{
@@ -29,6 +28,17 @@ nav{
     display: flex;
     gap: 24px;
 }
+section{
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 60px 24px;
+}
+section h3{
+    color: var(--main-color);
+    margin-bottom: 16px;
+    font-size: 35px;
+    border-bottom: 3px solid var(--accent-color);
+}
 #hero{
     background-image:
     linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), /* 黒い半透明（文字を読みやすく） */
@@ -37,7 +47,14 @@ nav{
     padding: 140px 24px;
     color: var(--text-color);
     background-size: cover;
+    background-position: center;
     text-align: center;
+    max-width: none;
+
+}
+#hero h2{
+    margin-bottom: none;
+    color: var(--text-color);
 }
 
     
