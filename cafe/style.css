@@ -24,6 +24,14 @@ header{
     border-radius: 3px;
     align-items: center;
 }
+header button{
+    background-color: var(--accent-color);
+    color: var(--card-color);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
 nav{
     display: flex;
     gap: 24px;
@@ -164,12 +172,4 @@ footer {
     margin-top: 20px;
     cursor: pointer;
     color: white;
-}
-header button{
-    background-color: var(--accent-color);
-    color: var(--card-color);
-    border: none;
-    padding: 8px 16px;
-    border-radius: 8px;
-    cursor: pointer;
 }
