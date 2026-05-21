@@ -1,0 +1,175 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+  --main-color:   #e48817; /* メインの色（濃い茶色） */
+  --accent-color: #F59E0B; /* アクセントの色（オレンジ） */
+  --bg-color:     #f0f3d9; /* ページ全体の背景色（クリーム色） */
+  --text-color:   #ffffff; /* 文字色（濃いグレー） */
+  --card-color:   #FFFFFF; /* カードやヘッダーの白 */
+  --muted-color:  #6B7280; /* 説明文や枠線の控えめなグレー */
+}
+body{
+    font-family: 'Arial', sans-serif;
+    background-color: var(--bg-color);
+}
+
+header{
+    background-color: var(--card-color);
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    border-radius: 3px;
+    align-items: center;
+}
+header button{
+    background-color: var(--accent-color);
+    color: var(--card-color);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+nav{
+    display: flex;
+    gap: 24px;
+    float: left;
+    
+}
+nav a{
+    text-decoration: none;
+    color: var(--muted-color);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    transition: 0.4s ease-in-out;
+}
+nav a:hover{
+    color: sandybrown;
+
+}
+section{
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 60px 24px;
+}
+section h3{
+    color: var(--main-color);
+    margin-bottom: 16px;
+    font-size: 35px;
+    border-bottom: 3px solid var(--accent-color);
+}
+#hero{
+    background-image:
+    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), /* 黒い半透明（文字を読みやすく） */
+    url("https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=1600&h=900&fit=crop&auto=format&q=80"); /* 背景写真 */
+    text-align: center;
+    padding: 140px 24px;
+    color: var(--text-color);
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    max-width: none;
+
+}
+#hero h2{
+    margin-bottom: none;
+    color: var(--text-color);
+}
+.recommend{
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: 2px dashed var(--accent-color);
+    background-color: var(--card-color);
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 10px;
+}
+.recommend-btn{
+    flex: 1 1 200px;
+    background-color: var(--accent-color);
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 20px;
+    color: var(--card-color);
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+.recommend-btn:hover{
+    color: rgb(253, 0, 0);
+    opacity: 0.85;
+}
+.menu-item{
+    background-color: var(--card-color);
+    font-size: 30px;
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1 1 240px;
+    width: 240px;
+    overflow: hidden;
+    
+}
+.menu-item img{
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+}
+.menu-item p{
+    margin-top: 12px;
+    color: var(--muted-color);
+    font-size: 18px;
+}
+.menu-item .price{
+    display: block;
+    margin-top: 8px;
+    font-weight: bold;
+    color:rgb(215, 42, 11);
+}
+h4{
+    color: var(--main-color);
+}
+.menu-list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.contact{
+    background-color: var(--card-color);
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 24px;
+    border-radius: 12px;
+}
+.form-row{
+    display: flex;
+    flex-direction: column;
+    gap : 12px;
+}
+.form-row label{
+    font-weight: bold;
+    color: var(--accent-color);
+}
+footer {
+    background-color: var(--main-color);
+    color: var(--card-color);
+    text-align: center;
+    padding: 24px;
+    margin-top: 60px;
+}
+.contact-btn{
+    background-color: var(--accent-color);
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 20px;
+    cursor: pointer;
+    color: white;
+}

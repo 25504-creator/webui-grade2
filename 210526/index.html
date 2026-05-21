@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe OCC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Cafe OCC</h1>
+        <nav>
+            <a href="#about">about</a>
+            <a href="#menu">menu</a>
+            <a href="#contact">access</a>
+        </nav>
+        <button>テーマ変更</button>
+    </header>    
+    <main>
+        <section  id="hero">
+            <h2>朝の光と、一杯のコーヒー。</h2>
+            <h>静かな時間をお届けする街のカフェ</h>
+        </section>
+
+        <section  id="about">
+            <h3>About</h3>
+            <p>2026年オープン。豆の香りと木の温もりに包まれた小さな空間で、ゆったりとした時間をお過ごしいただけます。</p>
+            <p>お一人でも、ご家族でも、お気軽にどうぞ。</p>
+        </section>
+
+        <section id="contact">
+            <h3><MENU>Menu</MENU></h3>
+         
+            <div class="recommend">
+                <h4>おすすめメニュー</h4>
+    
+                <ul>
+                    <li>カフェラテ - 500円</li>
+                    <li>自家製ケーキ - 400円</li>
+                    <li>季節のフルーツジュース - 450円</li>
+                    <button onclick="pickRecommend()" class="recommend-btn">☕ おすすめを見る</button>
+                </ul>
+            </div>
+            <div class="menu-list">
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&h=400&fit=crop&auto=format&q=80" alt="本日のコーヒー">
+                    <h4>本日のコーヒー</h4>
+                    <p class="price">500円</p>
+                    <p>季節のシングルオリジン豆を、一杯ずつ丁寧にハンドドリップ。</p>
+                </div>
+
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&h=400&fit=crop&auto=format&q=80" alt="本日のコーヒー">
+                    <h4>本日のコーヒー</h4>
+                    <p class="price">500円</p>
+                    <p>季節のシングルオリジン豆を、一杯ずつ丁寧にハンドドリップ。</p>
+                </div>
+
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&h=400&fit=crop&auto=format&q=80" alt="本日のコーヒー">
+                    <h4>本日のコーヒー</h4>
+                    <p class="price">500円</p>
+                    <p>季節のシングルオリジン豆を、一杯ずつ丁寧にハンドドリップ。</p>
+                </div>
+
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&h=400&fit=crop&auto=format&q=80" alt="本日のコーヒー">
+                    <h4>本日のコーヒー</h4>
+                    <p class="price">500円</p>
+                    <p>季節のシングルオリジン豆を、一杯ずつ丁寧にハンドドリップ。</p>
+                </div>
+
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&h=400&fit=crop&auto=format&q=80" alt="本日のコーヒー">
+                    <h4>本日のコーヒー</h4>
+                    <p class="price">500円</p>
+                    <p>季節のシングルオリジン豆を、一杯ずつ丁寧にハンドドリップ。</p>
+                </div>
+
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&h=400&fit=crop&auto=format&q=80" alt="本日のコーヒー">
+                    <h4>本日のコーヒー</h4>
+                    <p class="price">500円</p>
+                    <p>季節のシングルオリジン豆を、一杯ずつ丁寧にハンドドリップ。</p>
+                </div>
+            </div>
+        </section>
+        <section id="contact">
+            <div class="contact">
+                <h3>席のご予約</h3>
+                <p>お席をお取りしてお待ちしております。</p>
+                <p>電話番号: 03-1234-5678</p>
+                <div class="contact-form">
+                    <div class="form-row"> 
+                            <label for="name">お名前</label>
+                            <input type="text" id="name" name="name">
+                    </div>
+                    <div class="form-row">
+                            <label for="date">人数</label>
+                            <input type="number" id="date" name="date" min="1" max="20">
+                    </div>
+                   <button onclick="reserve()" class="contact-btn">予約する</button>
+                </div>
+                <p id="reserveResult" class="reserve-result"></p>
+            </div>
+        </section>
+        <!-- Access：営業時間・住所・電話 -->
+        <section id="access">
+            <h3>Access</h3>
+            <p>営業時間:8:00 - 20:00（火曜定休）</p>
+            <p>住所:〇〇市〇〇町1-2-3 カフェOCCビル 2F</p>
+            <p>電話:000-1234-5678</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Cafe OCC. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
