@@ -39,7 +39,6 @@
                     <li>自家製ケーキ - 400円</li>
                     <li>季節のフルーツジュース - 450円</li>
                     <button onclick="pickRecommend()" class="recommend-btn">☕ おすすめを見る</button>
-                    <p id="recommendResult" class="recommend-result"></p>
                 </ul>
             </div>
             <div class="menu-list">
@@ -100,9 +99,8 @@
                             <label for="date">人数</label>
                             <input type="number" id="date" name="date" min="1" max="20">
                     </div>
-                   <button onclick="reserve()" class="contact-btn">予約する</button>
+                   <button class="contact-btn">予約する</button>
                 </div>
-                <p id="reserveResult" class="reserve-result"></p>
             </div>
         </section>
         <!-- Access：営業時間・住所・電話 -->
@@ -117,6 +115,5 @@
     <footer>
         <p>&copy; 2023 Cafe OCC. All rights reserved.</p>
     </footer>
-    <script src="script.js"></script>
 </body>
 </html>

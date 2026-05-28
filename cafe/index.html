@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cafe OCC</title>
     <link rel="stylesheet" href="style.css">
-</head>
+</head> 
 <body>
     <header>
         <h1>Cafe OCC</h1>
@@ -14,7 +14,7 @@
             <a href="#menu">menu</a>
             <a href="#contact">access</a>
         </nav>
-        <button>テーマ変更</button>
+        <button onclick="toggleTheme()">テーマ変更</button>
     </header>    
     <main>
         <section  id="hero">
@@ -28,18 +28,14 @@
             <p>お一人でも、ご家族でも、お気軽にどうぞ。</p>
         </section>
 
-        <section id="contact">
-            <h3><MENU>Menu</MENU></h3>
-         
+        <section id="menu">
+            <h3>Menu</h3>
             <div class="recommend">
-                <h4>おすすめメニュー</h4>
-    
-                <ul>
-                    <li>カフェラテ - 500円</li>
-                    <li>自家製ケーキ - 400円</li>
-                    <li>季節のフルーツジュース - 450円</li>
-                    <button onclick="pickRecommend()" class="recommend-btn">☕ おすすめを見る</button>
-                </ul>
+                <h4>今日のおすすめは？</h4>
+                <p>気分が決まらないときは、おまかせで一品ご提案します。</p>
+                <button onclick="pickRecommend()" class="recommend-btn">☕ おすすめを見る</button>
+                <p id="recommendResult" class="recommend-result"></p>
+                
             </div>
             <div class="menu-list">
                 <div class="menu-item">
@@ -99,8 +95,9 @@
                             <label for="date">人数</label>
                             <input type="number" id="date" name="date" min="1" max="20">
                     </div>
-                   <button class="contact-btn">予約する</button>
+                   <button onclick="reserve()" class="contact-btn">予約する</button>
                 </div>
+                <p id="reserveResult" class="reserve-result"></p>
             </div>
         </section>
         <!-- Access：営業時間・住所・電話 -->
@@ -114,6 +111,8 @@
 
     <footer>
         <p>&copy; 2023 Cafe OCC. All rights reserved.</p>
+        <p><span id="visitCount">0</span>回目</p>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
