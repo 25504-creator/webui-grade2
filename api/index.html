@@ -1,17 +1,50 @@
 <!DOCTYPE html>
 <html lang="ja">
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Poke API</title>
+    <title>ポケモン図鑑</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <section>
-        <input id="name" placeholder="ポケモン名を入力">
-        <button id="section1-btn">検索</button>
-        <p id="section1-result"></p>
-    </section>
+    <div class="container">
+        <!-- View 1: Search Screen -->
+        <div id="search-view">
+            <a href="../index.html" class="back-link">← 戻る</a>
+            <h1>ポケモン検索</h1>
+            <p class="hero-message">君だけの最高のヒーローを見つけよう！</p>
+            <input id="name" placeholder="ポケモン名を入力 (例: pikachu)">
+            <button id="section1-btn">検索</button>
+            <div id="section1-result"></div>
+        </div>
+
+        <!-- View 2: Hero Status Screen -->
+        <div id="hero-view" style="display: none;">
+            <h1>ヒーロー情報</h1>
+            <div id="hero-display"></div>
+            <div class="button-group">
+                <button id="go-to-battle-btn">バトルへ進む！</button>
+                <button class="secondary-btn" onclick="showView('search-view')">別のポケモンを探す</button>
+            </div>
+        </div>
+
+        <!-- View 3: Battle Screen -->
+        <div id="battle-view" style="display: none;">
+            <hr>
+            <h2>バトルアリーナ</h2>
+            <div class="battle-flex">
+                <div id="player-side"></div>
+                <div class="vs">VS</div>
+                <div id="enemy-side"></div>
+                <div id="player-energy-orb" class="energy-orb"></div>
+                <div id="enemy-energy-orb" class="energy-orb"></div>
+                <div id="lightning" class="lightning"></div>
+            </div>
+            <button id="battle-start-btn">バトル開始！</button>
+            <p id="battle-result"></p>
+            <button class="secondary-btn" onclick="showView('hero-view')">ステータスに戻る</button>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

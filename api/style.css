@@ -1,0 +1,296 @@
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+.container {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+.back-link {
+    display: block;
+    text-align: left;
+    margin-bottom: 1rem;
+    color: #bb86fc;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+.hero-message {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+input {
+    padding: 12px;
+    width: 60%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: white;
+    color: #333;
+}
+button {
+    padding: 12px 20px;
+    background-color: #4a148c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+button:hover { background-color: #6a1b9a; }
+
+.secondary-btn {
+    background-color: #757575;
+    margin-top: 10px;
+}
+.secondary-btn:hover { background-color: #616161; }
+
+h3 { color: #bb86fc; }
+
+.character-card {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+}
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+.types-container {
+    margin: 10px 0;
+}
+.type-badge {
+    display: inline-block;
+    padding: 5px 12px;
+    background-color: #444;
+    color: #fff;
+    border-radius: 20px;
+    margin: 2px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+.battle-flex {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20px 0;
+    background: #f9f9f9;
+    padding: 10px;
+    border-radius: 10px;
+    position: relative; /* ដើម្បីឱ្យគ្រាប់ថាមពលរត់នៅក្នុងប្រអប់នេះ */
+}
+
+#player-side, #enemy-side {
+    position: relative;
+    transition: transform 0.3s;
+}
+
+/* 格闘アクション：右へ突進 */
+.attack-right {
+    animation: attack-right-anim 0.6s ease-in-out;
+}
+
+@keyframes attack-right-anim {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(-15px); } /* ため */
+    50% { transform: translateX(60px) rotate(15deg); } /* 衝突 */
+    100% { transform: translateX(0); }
+}
+
+/* 格闘アクション：左へ突進 */
+.attack-left {
+    animation: attack-left-anim 0.6s ease-in-out;
+}
+
+@keyframes attack-left-anim {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(15px); } /* ため */
+    50% { transform: translateX(-60px) rotate(-15deg); } /* 衝突 */
+    100% { transform: translateX(0); }
+}
+
+/* 画面フラッシュ演出 */
+.flash-screen {
+    animation: flash-anim 0.2s ease-out;
+}
+
+@keyframes flash-anim {
+    0% { filter: brightness(1); }
+    50% { filter: brightness(3); background-color: #fff; }
+    100% { filter: brightness(1); }
+}
+
+/* 勝利時のジャンプ演出 */
+.victory-jump {
+    animation: jump-anim 0.4s ease-out 2;
+}
+
+@keyframes jump-anim {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* HP Bar Shake Animation */
+.hp-shake {
+    animation: hp-shake-anim 0.2s ease-in-out 2;
+}
+
+@keyframes hp-shake-anim {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+}
+
+/* ថាមពល (Energy Orb) */
+.energy-orb {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: radial-gradient(circle, #fff, #00dbde, #fc00ff);
+    border-radius: 50%;
+    box-shadow: 0 0 20px #00dbde, 0 0 40px #fc00ff;
+    display: none;
+    z-index: 100;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.shoot-right {
+    display: block;
+    animation: shoot-right-anim 0.5s ease-in-out forwards;
+}
+
+.shoot-left {
+    display: block;
+    animation: shoot-left-anim 0.5s ease-in-out forwards;
+}
+
+@keyframes shoot-right-anim {
+    0% { left: 20%; transform: translateY(-50%) scale(0.5); opacity: 0; }
+    20% { opacity: 1; transform: translateY(-50%) scale(1.2); }
+    100% { left: 75%; transform: translateY(-50%) scale(1.5); opacity: 0; }
+}
+
+@keyframes shoot-left-anim {
+    0% { left: 75%; transform: translateY(-50%) scale(0.5); opacity: 0; }
+    20% { opacity: 1; transform: translateY(-50%) scale(1.2); }
+    100% { left: 20%; transform: translateY(-50%) scale(1.5); opacity: 0; }
+}
+
+/* HP Bar Styles */
+.hp-container {
+    width: 80%;
+    height: 10px;
+    background-color: #eee;
+    border-radius: 5px;
+    margin: 5px auto;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    position: relative;
+}
+.hp-bar {
+    width: 100%;
+    height: 100%;
+    background-color: #4caf50;
+    transition: width 0.5s ease-out;
+}
+.hp-bar.low-hp {
+    background-color: #ef5350;
+}
+.hp-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.6rem;
+    font-weight: bold;
+    color: #333;
+    pointer-events: none;
+}
+
+/* Victory Text Impact Animation */
+.victory-impact {
+    display: inline-block;
+    animation: victory-impact-anim 0.2s infinite;
+    font-size: 1.2rem;
+}
+
+@keyframes victory-impact-anim {
+    0% { transform: translate(0, 0) scale(1); color: #f44336; }
+    20% { transform: translate(-3px, -3px) scale(1.1); color: #ffeb3b; }
+    40% { transform: translate(3px, -3px) scale(1.1); color: #2196f3; }
+    60% { transform: translate(-3px, 3px) scale(1.2); color: #4caf50; }
+    80% { transform: translate(3px, 3px) scale(1.1); color: #e91e63; }
+    100% { transform: translate(0, 0) scale(1); color: #f44336; }
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+/* Level Up Glow Animation */
+.level-up-glow {
+    animation: level-up-glow-anim 2s ease-out;
+}
+
+@keyframes level-up-glow-anim {
+    0% { filter: brightness(1) drop-shadow(0 0 0px gold); }
+    50% { filter: brightness(1.5) drop-shadow(0 0 25px gold); }
+    100% { filter: brightness(1) drop-shadow(0 0 0px gold); }
+}
+.vs {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ef5350;
+}
+.question-mark {
+    font-size: 3rem;
+    color: #ccc;
+}
+
+/* EXP Bar Styles */
+.exp-container {
+    width: 80%;
+    height: 8px;
+    background-color: #eee;
+    border-radius: 4px;
+    margin: 5px auto;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    position: relative;
+}
+.exp-bar {
+    width: 0%;
+    height: 100%;
+    background-color: #2196f3; /* Blue for EXP */
+    transition: width 0.5s ease-out;
+}
+.exp-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.3rem;
+    font-weight: bold;
+    color: #333;
+    pointer-events: none;
+}
