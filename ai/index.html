@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <title>Flappy Bird ហាមាត់បញ្ជា</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; background-color: #222; color: white; margin: 0; padding: 10px; }
+        canvas { border: 4px solid #fff; background-color: #70c5ce; display: block; margin: 10px auto; }
+        #webcam-container { margin: 10px auto; width: 160px; height: 120px; border: 2px solid #555; }
+        button { padding: 10px 20px; font-size: 16px; cursor: pointer; background-color: #28a745; color: white; border: none; border-radius: 5px; }
+    </style>
+</head>
+<body>
+
+    <h1>ហ្គេមបក្សីហោះ (ហាមាត់ដើម្បីហោះឡើង)</h1>
+    <p>សូមប្តូរលីង Teachable Machine របស់អ្នកត្រង់ជួរទី 24 ក្នុងកូដ</p>
+    <button type="button" onclick="init()">ចាប់ផ្តើមបើកកាមេរ៉ា</button>
+    
+    <canvas id="birdGame" width="320" height="350"></canvas>
+    <div id="webcam-container"></div>
+    <p id="status">ចុចប៊ូតុងខាងលើដើម្បីលេង...</p>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+
+    <script>
+        // === 🛑 ដាក់លីងដែលអ្នកចម្លងពី Teachable Machine នៅត្រង់នេះ 🛑 ===
+        const URL = "https://teachablemachine.withgoogle.com/models/v91X_g6f_/"; 
+
+        let model, webcam, maxPredictions;
+        let cvs = document.getElementById("birdGame");
+        let ctx = cvs.getContext("2d");
+
+        let birdY = 150;
+        let velocity = 0;
+        let gravity = 0.4;
+        let jump = -6;
+        let score = 0;
+        let pipeX = 320;
+        let pipeGap = 110;
+        let pipeTopHeight = 100;
+        let isGameOver = false;
+
+        async function init() {
+            document.getElementById("status").innerText = "កំពុងភ្ជាប់ទៅ AI...";
+            try {
+                model = await tmImage.load(URL + "model.json", URL + "metadata.json");
+                maxPredictions = model.getTotalClasses();
+
+                webcam = new tmImage.Webcam(160, 120, false);
+                await webcam.setup();
+                await webcam.play();
+                document.getElementById("webcam-container").appendChild(webcam.canvas);
+                
+                document.getElementById("status").innerText = "ហ្គេមចាប់ផ្តើម! ហាមាត់ = ហោះឡើង, បិទមាត់ = ធ្លាក់ចុះ";
+                isGameOver = false;
+                window.requestAnimationFrame(loop);
+            } catch (e) {
+                document.getElementById("status").innerText = "កំហុស៖ មិនអាចបើកកាមេរ៉ាបានទេ! សូមពិនិត្យ Permission។";
+            }
+        }
+
+        async function loop() {
+            webcam.update();
+            await predict();
+            updateGame();
+            drawGame();
+            if (!isGameOver) window.requestAnimationFrame(loop);
+        }
+
+        async function predict() {
+            const prediction = await model.predict(webcam.canvas);
+            let highestProb = 0;
+            let currentAction = "Close";
+
+            for (let i = 0; i < maxPredictions; i++) {
+                if (prediction[i].probability > highestProb) {
+                    highestProb = prediction[i].probability;
+                    currentAction = prediction[i].className;
+                }
+            }
+
+            // បើហាមាត់ (Open) ឲ្យបក្សីហោះឡើង
+            if (currentAction === "Open") {
+                velocity = jump;
+            }
+        }
+
+        function updateGame() {
+            velocity += gravity;
+            birdY += velocity;
+
+            // រំកិលរបាំងព្រំដែន
+            pipeX -= 3;
+            if (pipeX < -40) {
+                pipeX = 320;
+                pipeTopHeight = Math.floor(Math.random() * 150) + 50;
+                score += 1;
+            }
+
+            // ពិនិត្យការបុករបាំង ឬធ្លាក់ដល់ដី
+            if (birdY > 340 || birdY < 0) {
+                endGame();
+            }
+            if (pipeX < 70 && pipeX > 20) {
+                if (birdY < pipeTopHeight || birdY > pipeTopHeight + pipeGap) {
+                    endGame();
+                }
+Withgoogle
+Teachable Machine
+Train a computer to recognize your own images, sounds, & poses.
+        A fast, easy way to create machine learning models for your sites, apps, and m...
+}
+        }
+
+        function drawGame() {
+            // គូរផ្ទៃមេឃ
+            ctx.fillStyle = "#70c5ce";
+            ctx.fillRect(0, 0, cvs.width, cvs.height);
+
+            // គូររបាំងខៀវ (បំពង់ទីប)
+            ctx.fillStyle = "#73bf2e";
+            ctx.fillRect(pipeX, 0, 40, pipeTopHeight);
+            ctx.fillRect(pipeX, pipeTopHeight + pipeGap, 40, cvs.height);
+
+            // គូរសត្វបក្សី (រង្វង់ពណ៌លឿង)
+            ctx.beginPath();
+            ctx.arc(50, birdY, 12, 0, Math.PI * 2);
+            ctx.fillStyle = "#f3ea11";
+            ctx.fill();
+            ctx.closePath();
+
+            // គូរពិន្ទុ
+            ctx.fillStyle = "#fff";
+            ctx.font = "20px sans-serif";
+            ctx.fillText("ពិន្ទុ៖ " + score, 10, 30);
+        }
+
+        function endGame() {
+            isGameOver = true;
+            alert("ហ្គេមបញ្ចប់! ពិន្ទុរបស់អ្នកគឺ៖ " + score);
+            document.getElementById("status").innerText = "ចុចប៊ូតុងខាងលើដើម្បីលេងម្តងទៀត";
+        }
+    </script>
+</body>
+</html>
+</body>
+</html>
