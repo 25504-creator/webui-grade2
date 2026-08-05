@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Lesson 13 - Inheritance & Polymorphism</title>
+
+    <style>
+        :root {
+            --bg-navy: #0d1b2a;
+            --bg-navy-deep: #0a1622;
+            --accent-lime: #b7ff4d;
+            --accent-lime-dark: #8fe022;
+            --card-bg: #13253a;
+            --card-border: rgba(255, 255, 255, 0.08);
+            --text-white: #ffffff;
+            --text-dim: #9fb0c3;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Poppins", Arial, sans-serif;
+            background: var(--bg-navy);
+            color: var(--text-white);
+        }
+
+        header {
+            background: var(--bg-navy-deep);
+            color: var(--text-white);
+            text-align: center;
+            padding: 25px;
+        }
+
+        header h3 {
+            color: var(--accent-lime);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 30px auto;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 14px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
+        }
+
+        h2, h3 {
+            color: var(--accent-lime);
+        }
+
+        pre {
+            background: #222;
+            color: #00ff66;
+            padding: 15px;
+            border-radius: 10px;
+            overflow: auto;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        button {
+            background: var(--accent-lime);
+            color: #0a1622;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 999px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 700;
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background: var(--accent-lime-dark);
+            transform: translateY(-1px);
+        }
+
+        .answer {
+            display: none;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        <h1>CodeKhmer Learning</h1>
+        <h1>Java Course</h1>
+        <h3>Lesson 13: Inheritance & Polymorphism</h3>
+    </header>
+
+    <div class="container">
+
+        <div class="card">
+            <h2>🧬 Inheritance</h2>
+            <p>
+                Inheritance is a core concept of OOP where one class can inherit attributes and methods from another class. This promotes code reusability.
+            </p>
+            <ul>
+                <li><strong>Superclass (or parent):</strong> the class being inherited from.</li>
+                <li><strong>Subclass (or child):</strong> the class that inherits from another class.</li>
+            </ul>
+            <p>We use the <code>extends</code> keyword to create a subclass.</p>
+            <pre>
+// Superclass
+class Animal {
+    public void eat() {
+        System.out.println("This animal eats food.");
+    }
+}
+
+// Subclass
+class Dog extends Animal {
+    public void bark() {
+        System.out.println("The dog barks.");
+    }
+}
+
+// In main method:
+Dog myDog = new Dog();
+myDog.eat();  // Inherited from Animal
+myDog.bark(); // Defined in Dog
+</pre>
+        </div>
+
+        <div class="card">
+            <h2>🎭 Polymorphism</h2>
+            <p>
+                Polymorphism means "many forms". In OOP, it's the ability of an object to take on many forms. The most common use of polymorphism in Java is when a parent class reference is used to refer to a child class object.
+            </p>
+            <p>It allows us to perform a single action in different ways. This is often achieved through <strong>method overriding</strong>.</p>
+        </div>
+
+        <div class="card">
+            <h3>Method Overriding</h3>
+            <p>If a subclass has the same method as declared in the parent class, it is known as method overriding. The subclass can provide its own specific implementation of the method.</p>
+            <pre>
+class Animal {
+    public void makeSound() {
+        System.out.println("The animal makes a sound");
+    }
+}
+
+class Pig extends Animal {
+    // Overriding the makeSound method
+    @Override
+    public void makeSound() {
+        System.out.println("The pig says: wee wee");
+    }
+}
+
+class Cat extends Animal {
+    // Overriding the makeSound method
+    @Override
+    public void makeSound() {
+        System.out.println("The cat says: meow");
+    }
+}
+
+// In main method:
+Animal myAnimal = new Animal();
+Animal myPig = new Pig(); // Animal reference, but Pig object
+Animal myCat = new Cat(); // Animal reference, but Cat object
+
+myAnimal.makeSound(); // Output: The animal makes a sound
+myPig.makeSound();    // Output: The pig says: wee wee
+myCat.makeSound();    // Output: The cat says: meow
+</pre>
+            <p>The <code>@Override</code> annotation is not required, but it is good practice as it helps the compiler check if you are correctly overriding a method.</p>
+        </div>
+
+        <div class="card">
+            <h2>📚 Practice</h2>
+            <p>Create a superclass called `Vehicle` with a method `drive()`. Then, create two subclasses, `Car` and `Bicycle`, that extend `Vehicle`. Override the `drive()` method in both subclasses to print a message specific to that vehicle (e.g., "Driving a car" and "Riding a bicycle").</p>
+        </div>
+
+        <div class="card">
+            <h2>📝 Quiz</h2>
+            <p>
+                What is the main benefit of inheritance?
+            </p>
+            <label><input type="radio" name="quiz" value="A"> Code Security</label><br><br>
+            <label><input type="radio" name="quiz" value="B"> Code Reusability</label><br><br>
+            <label><input type="radio" name="quiz" value="C"> Faster Performance</label><br><br>
+            <label><input type="radio" name="quiz" value="D"> Simpler Syntax</label><br><br>
+
+            <button onclick="checkAnswer()">Check Answer</button> 
+
+            <p id="answer" class="answer"></p>
+        </div>
+
+        <div class="card">
+            <h2>🎯 Summary</h2>
+            <p>
+                ✔ <strong>Inheritance</strong> allows a class to inherit properties and methods from another class using the <code>extends</code> keyword.<br>
+                ✔ <strong>Polymorphism</strong> allows objects to be treated as instances of their parent class, enabling a single action to have different behaviors.<br>
+                ✔ <strong>Method Overriding</strong> is when a subclass provides a specific implementation for a method that is already defined in its superclass.<br>
+                ✔ These concepts are fundamental to writing flexible and maintainable object-oriented code.
+            </p>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="java_lesson12.html" class="btn-nav">⬅ Previous Lesson</a>
+            <a href="java_lesson14.html" class="btn-nav">Next Lesson ➜</a>
+        </div>
+
+    </div>
+
+    <script>
+        function checkAnswer() {
+            const answer = document.querySelector('input[name="quiz"]:checked');
+            const result = document.getElementById("answer");
+
+            if (!answer) {
+                result.style.display = "block";
+                result.style.color = "red";
+                result.innerHTML = "❌ Please select an answer.";
+                return;
+            }
+
+            if (answer.value === "B") {
+                result.style.display = "block";
+                result.style.color = "green";
+                result.innerHTML = "✅ Correct! Inheritance allows us to reuse attributes and methods from an existing class, reducing redundant code.";
+            } else {
+                result.style.display = "block";
+                result.style.color = "red";
+                result.innerHTML = "❌ Incorrect. Please try again.";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

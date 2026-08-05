@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Lesson 11 - Methods</title>
+
+    <style>
+        :root {
+            --bg-navy: #0d1b2a;
+            --bg-navy-deep: #0a1622;
+            --accent-lime: #b7ff4d;
+            --accent-lime-dark: #8fe022;
+            --card-bg: #13253a;
+            --card-border: rgba(255, 255, 255, 0.08);
+            --text-white: #ffffff;
+            --text-dim: #9fb0c3;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Poppins", Arial, sans-serif;
+            background: var(--bg-navy);
+            color: var(--text-white);
+        }
+
+        header {
+            background: var(--bg-navy-deep);
+            color: var(--text-white);
+            text-align: center;
+            padding: 25px;
+        }
+
+        header h3 {
+            color: var(--accent-lime);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 30px auto;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 14px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
+        }
+
+        h2 {
+            color: var(--accent-lime);
+        }
+
+        pre {
+            background: #222;
+            color: #00ff66;
+            padding: 15px;
+            border-radius: 10px;
+            overflow: auto;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        button {
+            background: var(--accent-lime);
+            color: #0a1622;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 999px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 700;
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background: var(--accent-lime-dark);
+            transform: translateY(-1px);
+        }
+
+        .answer {
+            display: none;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        <h1>CodeKhmer Learning</h1>
+        <h1>Java Course</h1>
+        <h3>Lesson 11: Methods</h3>
+    </header>
+
+    <div class="container">
+
+        <div class="card">
+            <h2>🧩 What is a Method?</h2>
+            <p>
+                A method is a block of code that runs only when it is called. You can pass data, known as <strong>parameters</strong>, into a method. Methods are used to perform certain actions, and they are also known as <strong>functions</strong>.
+            </p>
+            <p>Why use methods? To reuse code: define the code once, and use it many times.</p>
+        </div>
+
+        <div class="card">
+            <h2>Creating and Calling a Method</h2>
+            <p>A method is defined inside a class. To call it, you write the method's name followed by parentheses <code>()</code>.</p>
+            <pre>
+public class Main {
+    // Create a method
+    static void myMethod() {
+        System.out.println("I just got executed!");
+    }
+
+    public static void main(String[] args) {
+        // Call the method
+        myMethod(); // Output: I just got executed!
+        myMethod(); // You can call it multiple times
+    }
+}
+</pre>
+            <p>Note: We use the <code>static</code> keyword here so we can call the method directly from <code>main</code> without creating an object. We'll learn more about this in the OOP lesson.</p>
+        </div>
+
+        <div class="card">
+            <h2>Parameters and Arguments</h2>
+            <p>Information can be passed to methods as parameters. Parameters act as variables inside the method.</p>
+            <pre>
+public class Main {
+    static void sayHello(String name) { // name is a parameter
+        System.out.println("Hello, " + name);
+    }
+
+    public static void main(String[] args) {
+        sayHello("Sok");   // "Sok" is an argument
+        sayHello("Dara");  // "Dara" is an argument
+    }
+}
+</pre>
+        </div>
+
+        <div class="card">
+            <h2>Return Values</h2>
+            <p>Methods can also return a value. The <code>void</code> keyword means the method does not return anything. If you want it to return a value, you can use a primitive data type (like <code>int</code> or <code>double</code>) instead of <code>void</code>, and use the <code>return</code> keyword inside the method.</p>
+            <pre>
+public class Main {
+    static int add(int x, int y) {
+        return x + y; // Returns the sum of x and y
+    }
+
+    public static void main(String[] args) {
+        int result = add(5, 3);
+        System.out.println(result); // Output: 8
+    }
+}
+</pre>
+        </div>
+
+        <div class="card">
+            <h2>📚 Practice</h2>
+            <p>Create a method named <code>calculateArea</code> that takes two integers, <code>width</code> and <code>height</code>, as parameters. The method should calculate the area (width * height) and return the result as an integer.</p>
+        </div>
+
+        <div class="card">
+            <h2>📝 Quiz</h2>
+            <p>
+                What is the term for the data you pass into a method when you call it?
+            </p>
+            <label><input type="radio" name="quiz" value="A"> Parameter</label><br><br>
+            <label><input type="radio" name="quiz" value="B"> Argument</label><br><br>
+            <label><input type="radio" name="quiz" value="C"> Return Value</label><br><br>
+            <label><input type="radio" name="quiz" value="D"> Variable</label><br><br>
+
+            <button onclick="checkAnswer()">Check Answer</button> 
+
+            <p id="answer" class="answer"></p>
+        </div>
+
+        <div class="card">
+            <h2>🎯 Summary</h2>
+            <p>
+                ✔ Methods are reusable blocks of code.<br>
+                ✔ Data passed to a method is called a <strong>parameter</strong> (in the definition) and an <strong>argument</strong> (when called).<br>
+                ✔ The <code>void</code> keyword indicates that a method does not return a value.<br>
+                ✔ Use the <code>return</code> keyword to send a value back from a method.
+            </p>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="java_lesson10.html" class="btn-nav">⬅ Previous Lesson</a>
+            <a href="java_lesson12.html" class="btn-nav">Next Lesson ➜</a>
+        </div>
+
+    </div>
+
+    <script>
+        function checkAnswer() {
+            const answer = document.querySelector('input[name="quiz"]:checked');
+            const result = document.getElementById("answer");
+
+            if (!answer) {
+                result.style.display = "block";
+                result.style.color = "red";
+                result.innerHTML = "❌ Please select an answer.";
+                return;
+            }
+
+            if (answer.value === "B") {
+                result.style.display = "block";
+                result.style.color = "green";
+                result.innerHTML = "✅ Correct! The value passed during the method call is an argument. The variable in the method definition is a parameter.";
+            } else {
+                result.style.display = "block";
+                result.style.color = "red";
+                result.innerHTML = "❌ Incorrect. Please try again.";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

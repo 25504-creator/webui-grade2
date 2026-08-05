@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 9 - HTML Forms</title>
+
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="lesson.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="js/main.js" defer></script>
+
+</head>
+
+<body>
+
+    <header>
+        <!-- Navbar will be loaded here by JavaScript -->
+        <div id="navbar-placeholder"></div>
+    </header>
+
+    <main>
+        <div class="lesson-header">
+            <h1>HTML Course</h1>
+            <h3>Lesson 9: HTML Forms</h3>
+        </div>
+
+        <div class="lesson-container">
+
+        <div class="card">
+            <h2>📖 What is a Form?</h2>
+            <p>
+                HTML forms are used to collect user input, such as text, email, passwords, and choices.
+                Forms are essential for login pages, contact pages, and search bars.
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>📚 Common Form Tags</h2>
+            <table>
+                <tr>
+                    <th>Tag</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>&lt;form&gt;</td>
+                    <td>The container for a form.</td>
+                </tr>
+                <tr>
+                    <td>&lt;input&gt;</td>
+                    <td>The most used form element. Can be of many types (text, password, radio, checkbox, submit).</td>
+                </tr>
+                <tr>
+                    <td>&lt;label&gt;</td>
+                    <td>A label for an &lt;input&gt; element.</td>
+                </tr>
+                <tr>
+                    <td>&lt;textarea&gt;</td>
+                    <td>A multi-line text input area.</td>
+                </tr>
+                <tr>
+                    <td>&lt;select&gt;</td>
+                    <td>A drop-down list.</td>
+                </tr>
+                <tr>
+                    <td>&lt;option&gt;</td>
+                    <td>An option in a drop-down list.</td>
+                </tr>
+                <tr>
+                    <td>&lt;button&gt;</td>
+                    <td>A clickable button.</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="card">
+            <h2>💻 Example Code</h2>
+            <pre>
+&lt;form action="/submit-form" method="post"&gt;
+
+  &lt;label for="name"&gt;Name:&lt;/label&gt;
+  &lt;input type="text" id="name" name="username"&gt;
+
+  &lt;label for="email"&gt;Email:&lt;/label&gt;
+  &lt;input type="email" id="email" name="useremail"&gt;
+
+  &lt;label for="message"&gt;Message:&lt;/label&gt;
+  &lt;textarea id="message" name="usermessage" rows="4"&gt;&lt;/textarea&gt;
+
+  &lt;label for="country"&gt;Country:&lt;/label&gt;
+  &lt;select id="country" name="usercountry"&gt;
+    &lt;option value="kh"&gt;Cambodia&lt;/option&gt;
+    &lt;option value="jp"&gt;Japan&lt;/option&gt;
+  &lt;/select&gt;
+
+  &lt;input type="submit" value="Send"&gt;
+
+&lt;/form&gt;
+</pre>
+        </div>
+
+        <div class="card">
+            <h2>👀 Example Output</h2>
+            <div class="demo-box">
+                <form onsubmit="alert('Form submitted!'); return false;">
+                    <label for="demo-name">Name:</label>
+                    <input type="text" id="demo-name" name="username" required>
+
+                    <label for="demo-email">Email:</label>
+                    <input type="email" id="demo-email" name="useremail" required>
+
+                    <label for="demo-message">Message:</label>
+                    <textarea id="demo-message" name="usermessage" rows="4" required></textarea>
+
+                    <label for="demo-country">Country:</label>
+                    <select id="demo-country" name="usercountry">
+                        <option value="kh">Cambodia</option>
+                        <option value="jp">Japan</option>
+                        <option value="us">USA</option>
+                    </select>
+                    <br><br>
+                    <input type="submit" value="Send">
+                </form>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>💡 Tips</h2>
+            <ul>
+                <li>Always use the &lt;label&gt; tag for form controls to improve accessibility.</li>
+                <li>The `for` attribute of the &lt;label&gt; should match the `id` of the &lt;input&gt;.</li>
+                <li>The `name` attribute is important for sending the form data to a server.</li>
+                <li>Use different `type` attributes for &lt;input&gt; to get different controls (e.g., `password`, `radio`, `checkbox`).</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>📚 Practice</h2>
+            <p>Create a contact form that asks for:</p>
+            <ol>
+                <li>Full Name (text input)</li>
+                <li>Email (email input)</li>
+                <li>Subject (text input)</li>
+                <li>Your Message (textarea)</li>
+                <li>A "Submit" button</li>
+            </ol>
+        </div>
+
+        <div class="card">
+            <h2>📝 Quiz</h2>
+            <p>
+                Which tag is used to create a multi-line text input?
+            </p>
+            <label><input type="radio" name="quiz" value="A"> &lt;input type="text"&gt;</label><br><br>
+            <label><input type="radio" name="quiz" value="B"> &lt;select&gt;</label><br><br>
+            <label><input type="radio" name="quiz" value="C"> &lt;textarea&gt;</label><br><br>
+            <label><input type="radio" name="quiz" value="D"> &lt;form&gt;</label><br><br>
+
+            <button onclick="checkAnswer(this)"
+                    data-correct-answer="C"
+                    data-correct-feedback="The &lt;textarea&gt; tag creates a multi-line text input."
+                    data-incorrect-feedback="Please try again.">
+                Check Answer
+            </button>
+
+            <p id="answer" class="answer"></p>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="lesson8.html" class="btn-nav">⬅ Previous Lesson</a>
+            <a href="lesson10.html" class="btn-nav">Next Lesson ➜</a>
+        </div>
+
+        </div>
+    </main>
+
+    <!-- Footer will be loaded here by JavaScript -->
+    <div id="footer-placeholder"></div>
+
+    <script src="js/quiz.js"></script>
+
+</body>
+
+</html>

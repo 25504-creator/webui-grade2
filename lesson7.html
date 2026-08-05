@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 7 - HTML Tables</title>
+
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="lesson.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="js/main.js" defer></script>
+
+</head>
+
+<body>
+
+    <header>
+        <!-- Navbar will be loaded here by JavaScript -->
+        <div id="navbar-placeholder"></div>
+    </header>
+
+    <main>
+        <div class="lesson-header">
+            <h1>HTML Course</h1>
+            <h3>Lesson 7: HTML Tables</h3>
+        </div>
+
+        <div class="lesson-container">
+
+        <div class="card">
+
+            <h2>📖 What is a Table?</h2>
+
+            <p>
+
+                An HTML table is used to organize data into rows and columns.
+
+                Tables are useful for schedules, prices, student lists, and reports.
+
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>📚 Table Tags</h2>
+
+            <table>
+
+                <tr>
+                    <th>Tag</th>
+                    <th>Description</th>
+                </tr>
+
+                <tr>
+                    <td>&lt;table&gt;</td>
+                    <td>Creates a table</td>
+                </tr>
+
+                <tr>
+                    <td>&lt;tr&gt;</td>
+                    <td>Creates a row</td>
+                </tr>
+
+                <tr>
+                    <td>&lt;th&gt;</td>
+                    <td>Creates a header cell</td>
+                </tr>
+
+                <tr>
+                    <td>&lt;td&gt;</td>
+                    <td>Creates a normal data cell</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="card">
+
+            <h2>💻 Basic Table Example</h2>
+
+            <pre>
+&lt;table&gt;
+
+    &lt;tr&gt;
+        &lt;th&gt;Name&lt;/th&gt;
+        &lt;th&gt;Age&lt;/th&gt;
+    &lt;/tr&gt;
+
+    &lt;tr&gt;
+        &lt;td&gt;John&lt;/td&gt;
+        &lt;td&gt;20&lt;/td&gt;
+    &lt;/tr&gt;
+
+&lt;/table&gt;
+</pre>
+
+        </div>
+
+        <div class="card">
+
+            <h2>👀 Output</h2>
+
+            <table>
+
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                </tr>
+
+                <tr>
+                    <td>John</td>
+                    <td>20</td>
+                </tr>
+
+                <tr>
+                    <td>Emma</td>
+                    <td>22</td>
+                </tr>
+
+                <tr>
+                    <td>David</td>
+                    <td>19</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="card">
+
+            <h2>📌 colspan Example</h2>
+
+            <pre>
+&lt;td colspan="2"&gt;Student&lt;/td&gt;
+</pre>
+
+            <table>
+
+                <tr>
+                    <th colspan="2">Student Information</th>
+                </tr>
+
+                <tr>
+                    <td>Name</td>
+                    <td>John</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="card">
+
+            <h2>📌 rowspan Example</h2>
+
+            <pre>
+&lt;td rowspan="2"&gt;HTML&lt;/td&gt;
+</pre>
+
+            <table>
+
+                <tr>
+                    <th>Course</th>
+                    <th>Level</th>
+                </tr>
+
+                <tr>
+                    <td rowspan="2">HTML</td>
+                    <td>Beginner</td>
+                </tr>
+
+                <tr>
+                    <td>Advanced</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="card">
+
+            <h2>💡 Tips</h2>
+
+            <ul>
+
+                <li>Use &lt;th&gt; for table headers.</li>
+
+                <li>Use &lt;td&gt; for data.</li>
+
+                <li>Use colspan to merge columns.</li>
+
+                <li>Use rowspan to merge rows.</li>
+
+                <li>Use CSS to make tables beautiful.</li>
+
+            </ul>
+
+        </div>
+
+        <div class="card">
+
+            <h2>📚 Practice</h2>
+
+            <p>Create a table that contains:</p>
+
+            <ol>
+
+                <li>Student Name</li>
+
+                <li>Age</li>
+
+                <li>Country</li>
+
+                <li>Favorite Language</li>
+
+            </ol>
+
+        </div>
+
+        <div class="card">
+
+            <h2>📝 Quiz</h2>
+
+            <p>Which HTML tag creates a table row?</p>
+
+            <label>
+                <input type="radio" name="quiz" value="A">
+                &lt;table&gt;
+            </label>
+
+            <br><br>
+
+            <label>
+                <input type="radio" name="quiz" value="B">
+                &lt;td&gt;
+            </label>
+
+            <br><br>
+
+            <label>
+                <input type="radio" name="quiz" value="C">
+                &lt;tr&gt;
+            </label>
+
+            <br><br>
+
+            <label>
+                <input type="radio" name="quiz" value="D">
+                &lt;th&gt;
+            </label>
+
+            <br><br>
+
+            <button onclick="checkAnswer(this)"
+                    data-correct-answer="C"
+                    data-correct-feedback="The &lt;tr&gt; tag creates a table row."
+                    data-incorrect-feedback="Please try again.">
+                Check Answer
+            </button>
+
+            <p id="answer" class="answer"></p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>🎯 Summary</h2>
+
+            <p>
+
+                ✔ HTML tables organize data.<br>
+
+                ✔ Use <b>&lt;table&gt;</b> to create a table.<br>
+
+                ✔ Use <b>&lt;tr&gt;</b> for rows.<br>
+
+                ✔ Use <b>&lt;th&gt;</b> for headings.<br>
+
+                ✔ Use <b>&lt;td&gt;</b> for data.<br>
+
+                ✔ Use <b>colspan</b> and <b>rowspan</b> to merge cells.
+
+            </p>
+
+        </div>
+
+        <div class="nav-buttons">
+            <a href="lesson6.html" class="btn-nav">⬅ Previous Lesson</a>
+            <a href="lesson8.html" class="btn-nav">Next Lesson ➜</a>
+        </div>
+
+        </div>
+    </main>
+
+    <!-- Footer will be loaded here by JavaScript -->
+    <div id="footer-placeholder"></div>
+
+    <script src="js/quiz.js"></script>
+
+</body>
+
+</html>

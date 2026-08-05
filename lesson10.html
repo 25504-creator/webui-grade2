@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 10 - HTML Audio & Video</title>
+
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="lesson.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="js/main.js" defer></script>
+
+</head>
+
+<body>
+
+    <header>
+        <!-- Navbar will be loaded here by JavaScript -->
+        <div id="navbar-placeholder"></div>
+    </header>
+
+    <main>
+        <div class="lesson-header">
+            <h1>HTML Course</h1>
+            <h3>Lesson 10: HTML Audio & Video</h3>
+        </div>
+
+        <div class="lesson-container">
+
+        <div class="card">
+            <h2>📖 Embedding Media</h2>
+            <p>
+                HTML5 introduced the &lt;audio&gt; and &lt;video&gt; elements, making it easy to embed media files directly into your webpages without needing plugins.
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>🎵 The &lt;audio&gt; Element</h2>
+            <p>The &lt;audio&gt; tag is used to embed sound content in a document, such as music or other audio streams.</p>
+            <pre>
+&lt;audio controls&gt;
+  &lt;source src="horse.mp3" type="audio/mpeg"&gt;
+  Your browser does not support the audio element.
+&lt;/audio&gt;
+</pre>
+            <p>The `controls` attribute adds audio controls, like play, pause, and volume.</p>
+        </div>
+
+        <div class="card">
+            <h2>🎬 The &lt;video&gt; Element</h2>
+            <p>The &lt;video&gt; tag is used to embed video content.</p>
+            <pre>
+&lt;video width="320" height="240" controls&gt;
+  &lt;source src="movie.mp4" type="video/mp4"&gt;
+  Your browser does not support the video tag.
+&lt;/video&gt;
+</pre>
+            <p>Common attributes include `width`, `height`, `controls`, `autoplay`, `muted`, and `loop`.</p>
+        </div>
+
+        <div class="card">
+            <h2>👀 Example Output</h2>
+            <h4>Video Example</h4>
+            <video width="400" controls>
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                Your browser does not support HTML video.
+            </video>
+            <h4 style="margin-top: 20px;">Audio Example</h4>
+            <audio controls>
+                <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+
+        <div class="card">
+            <h2>💡 Tips</h2>
+            <ul>
+                <li>Always include the `controls` attribute for a better user experience.</li>
+                <li>Use the &lt;source&gt; tag to specify multiple media formats for better browser compatibility.</li>
+                <li>The `autoplay` attribute often requires the `muted` attribute to work in modern browsers.</li>
+                <li>For embedding videos from services like YouTube, use their provided `&lt;iframe&gt;` embed code.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>📚 Practice</h2>
+            <p>Create a webpage that contains:</p>
+            <ol>
+                <li>An audio file that plays a song.</li>
+                <li>A video file that plays a short clip.</li>
+                <li>Make sure both have controls visible.</li>
+            </ol>
+        </div>
+
+        <div class="card">
+            <h2>📝 Quiz</h2>
+            <p>
+                Which attribute adds play/pause controls to an audio or video element?
+            </p>
+            <label><input type="radio" name="quiz" value="A"> src</label><br><br>
+            <label><input type="radio" name="quiz" value="B"> controls</label><br><br>
+            <label><input type="radio" name="quiz" value="C"> autoplay</label><br><br>
+            <label><input type="radio" name="quiz" value="D"> type</label><br><br>
+
+            <button onclick="checkAnswer(this)"
+                    data-correct-answer="B"
+                    data-correct-feedback="The `controls` attribute adds the player controls."
+                    data-incorrect-feedback="Please try again.">
+                Check Answer
+            </button>
+
+            <p id="answer" class="answer"></p>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="lesson9.html" class="btn-nav">⬅ Previous Lesson</a>
+            <a href="lesson11.html" class="btn-nav">Next Lesson ➜</a>
+        </div>
+
+        </div>
+    </main>
+
+    <!-- Footer will be loaded here by JavaScript -->
+    <div id="footer-placeholder"></div>
+
+    <script src="js/quiz.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 8 - HTML Text Formatting</title>
+
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="lesson.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="js/main.js" defer></script>
+
+</head>
+
+<body>
+
+    <header>
+        <!-- Navbar will be loaded here by JavaScript -->
+        <div id="navbar-placeholder"></div>
+    </header>
+
+    <main>
+        <div class="lesson-header">
+            <h1>HTML Course</h1>
+            <h3>Lesson 8: HTML Text Formatting</h3>
+        </div>
+
+        <div class="lesson-container">
+
+        <div class="card">
+
+            <h2>📖 What is Text Formatting?</h2>
+
+            <p>
+                HTML provides several tags to format text, making it bold, italic, or highlighted.
+                These tags help to emphasize certain parts of your content.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>📚 Formatting Tags</h2>
+
+            <table>
+                <tr>
+                    <th>Tag</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>&lt;b&gt;</td>
+                    <td>Bold text</td>
+                </tr>
+                <tr>
+                    <td>&lt;strong&gt;</td>
+                    <td>Important text (semantically bold)</td>
+                </tr>
+                <tr>
+                    <td>&lt;i&gt;</td>
+                    <td>Italic text</td>
+                </tr>
+                <tr>
+                    <td>&lt;em&gt;</td>
+                    <td>Emphasized text (semantically italic)</td>
+                </tr>
+                <tr>
+                    <td>&lt;mark&gt;</td>
+                    <td>Marked or highlighted text</td>
+                </tr>
+                <tr>
+                    <td>&lt;small&gt;</td>
+                    <td>Smaller text</td>
+                </tr>
+                <tr>
+                    <td>&lt;del&gt;</td>
+                    <td>Deleted text (strikethrough)</td>
+                </tr>
+                <tr>
+                    <td>&lt;ins&gt;</td>
+                    <td>Inserted text (underline)</td>
+                </tr>
+                <tr>
+                    <td>&lt;sub&gt;</td>
+                    <td>Subscript text (e.g., H₂O)</td>
+                </tr>
+                <tr>
+                    <td>&lt;sup&gt;</td>
+                    <td>Superscript text (e.g., E=mc²)</td>
+                </tr>
+            </table>
+
+        </div>
+
+        <div class="card">
+
+            <h2>💻 Example Code</h2>
+
+            <pre>
+&lt;p&gt;This is &lt;b&gt;bold&lt;/b&gt; and this is &lt;strong&gt;important&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;This is &lt;i&gt;italic&lt;/i&gt; and this is &lt;em&gt;emphasized&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Do not forget to buy &lt;mark&gt;milk&lt;/mark&gt; today.&lt;/p&gt;
+&lt;p&gt;My favorite color is &lt;del&gt;blue&lt;/del&gt; &lt;ins&gt;red&lt;/ins&gt;.&lt;/p&gt;
+&lt;p&gt;H&lt;sub&gt;2&lt;/sub&gt;O and E=mc&lt;sup&gt;2&lt;/sup&gt;.&lt;/p&gt;
+</pre>
+
+        </div>
+
+        <div class="card">
+
+            <h2>👀 Example Output</h2>
+
+            <div class="demo-box">
+                <p>This is <b>bold</b> and this is <strong>important</strong>.</p>
+                <p>This is <i>italic</i> and this is <em>emphasized</em>.</p>
+                <p>Do not forget to buy <mark>milk</mark> today.</p>
+                <p>My favorite color is <del>blue</del> <ins>red</ins>.</p>
+                <p>H<sub>2</sub>O and E=mc<sup>2</sup>.</p>
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <h2>💡 Tips</h2>
+
+            <ul>
+                <li>Use <strong> for important text, not just for bolding.</li>
+                <li>Use <em> for emphasized text, not just for italics.</li>
+                <li>These tags can be combined.</li>
+            </ul>
+
+        </div>
+
+        <div class="card">
+
+            <h2>📚 Practice</h2>
+
+            <p>Create a paragraph that uses at least 5 different formatting tags.</p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>📝 Quiz</h2>
+
+            <p>
+                Which tag is used to define important text?
+            </p>
+
+            <label><input type="radio" name="quiz" value="A"> &lt;b&gt;</label><br><br>
+            <label><input type="radio" name="quiz" value="B"> &lt;i&gt;</label><br><br>
+            <label><input type="radio" name="quiz" value="C"> &lt;strong&gt;</label><br><br>
+            <label><input type="radio" name="quiz" value="D"> &lt;mark&gt;</label><br><br>
+
+            <button onclick="checkAnswer(this)"
+                    data-correct-answer="C"
+                    data-correct-feedback="The &lt;strong&gt; tag is used for important text."
+                    data-incorrect-feedback="Please try again.">
+                Check Answer
+            </button>
+
+            <p id="answer" class="answer"></p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>🎯 Summary</h2>
+
+            <p>
+                ✔ HTML has tags for text formatting.<br>
+                ✔ <strong> and <em> add semantic meaning.<br>
+                ✔ Formatting helps to structure and emphasize content.
+            </p>
+
+        </div>
+
+        <div class="nav-buttons">
+            <a href="lesson7.html" class="btn-nav">⬅ Previous Lesson</a>
+            <a href="lesson9.html" class="btn-nav">Next Lesson ➜</a>
+        </div>
+
+        </div>
+    </main>
+
+    <!-- Footer will be loaded here by JavaScript -->
+    <div id="footer-placeholder"></div>
+
+    <script src="js/quiz.js"></script>
+
+</body>
+
+</html>

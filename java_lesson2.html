@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Lesson 2 - Installing Java & IDE</title>
+
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="lesson.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="js/main.js" defer></script>
+
+</head>
+
+<body>
+
+    <header>
+        <!-- Navbar will be loaded here by JavaScript -->
+        <div id="navbar-placeholder"></div>
+    </header>
+
+    <main>
+        <div class="lesson-header">
+            <h1>Java Course</h1>
+            <h3>Lesson 2: Installing Java & IDE</h3>
+        </div>
+
+        <div class="lesson-container">
+
+        <div class="card">
+            <h2>🛠️ Setting Up Your Environment</h2>
+            <p>
+                Before you can write and run Java code, you need to set up your development environment. This involves two main steps: installing the Java Development Kit (JDK) and choosing an Integrated Development Environment (IDE).
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>1. Installing the JDK</h2>
+            <p>The JDK includes the tools needed to develop and run Java applications.</p>
+            <ul>
+                <li><strong>JDK (Java Development Kit):</strong> For developers. It includes the compiler, debugger, and the JRE.</li>
+                <li><strong>JRE (Java Runtime Environment):</strong> For users. It allows you to run Java applications but not develop them.</li>
+                <li><strong>JVM (Java Virtual Machine):</strong> An abstract machine that runs the Java bytecode. It's part of the JRE.</li>
+            </ul>
+            <p>You can download the latest JDK from <a href="https://www.oracle.com/java/technologies/downloads/" target="_blank">Oracle's website</a> or use an open-source version like <a href="https://adoptium.net/" target="_blank">Eclipse Temurin (Adoptium)</a>.</p>
+        </div>
+
+        <div class="card">
+            <h2>2. Choosing an IDE</h2>
+            <p>An IDE is a software application that provides comprehensive facilities to computer programmers for software development. An IDE normally consists of a source code editor, build automation tools, and a debugger.</p>
+            <p>Popular IDEs for Java include:</p>
+            <ul>
+                <li><strong>IntelliJ IDEA:</strong> Very powerful and popular, with a free Community Edition.</li>
+                <li><strong>Eclipse:</strong> A classic, open-source, and highly extensible IDE.</li>
+                <li><strong>Visual Studio Code (VS Code):</strong> A lightweight but powerful code editor with great Java support through extensions.</li>
+            </ul>
+            <p>For beginners, VS Code with the "Extension Pack for Java" is a great starting point.</p>
+        </div>
+
+        <div class="card">
+            <h2>✅ Verifying Installation</h2>
+            <p>After installing the JDK, open your terminal or command prompt and type the following commands to check if it was installed correctly:</p>
+            <pre>
+java -version
+javac -version
+</pre>
+            <p>If both commands show a version number, your installation was successful!</p>
+        </div>
+
+        <div class="card">
+            <h2>📝 Quiz</h2>
+            <p>
+                Which component is required to COMPILE a Java program?
+            </p>
+            <label><input type="radio" name="quiz" value="A"> JVM (Java Virtual Machine)</label><br><br>
+            <label><input type="radio" name="quiz" value="B"> JRE (Java Runtime Environment)</label><br><br>
+            <label><input type="radio" name="quiz" value="C"> JDK (Java Development Kit)</label><br><br>
+            <label><input type="radio" name="quiz" value="D"> IDE (Integrated Development Environment)</label><br><br>
+            
+            <button onclick="checkAnswer(this)"
+                    data-correct-answer="C"
+                    data-correct-feedback="The JDK contains the Java compiler (`javac`) needed to compile code."
+                    data-incorrect-feedback="The JRE is only for running programs, not compiling them.">
+                Check Answer
+            </button>
+
+            <p id="answer" class="answer"></p>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="java_lesson1.html" class="btn-nav">⬅ Previous Lesson</a>
+            <a href="java_lesson3.html" class="btn-nav">Next Lesson ➜</a>
+        </div>
+
+        </div>
+    </main>
+
+    <!-- Footer will be loaded here by JavaScript -->
+    <div id="footer-placeholder"></div>
+
+    <script src="js/quiz.js"></script>
+
+</body>
+
+</html>

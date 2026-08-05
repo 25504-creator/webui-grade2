@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 1 - What is HTML?</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="lesson.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="js/main.js" defer></script>
+
+</head>
+
+<body>
+
+    <header>
+        <!-- Navbar will be loaded here by JavaScript -->
+        <div id="navbar-placeholder"></div>
+    </header>
+
+    <main>
+        <div class="lesson-header">
+            <h1>HTML Course</h1>
+        <h3>Lesson 1 : What is HTML?</h3>
+        </div>
+
+    <div class="lesson-container">
+
+        <div class="card">
+
+
+            <h2>📖 What is HTML?</h2>
+
+
+            <p>
+
+                HTML stands for <b>HyperText Markup Language</b>.
+
+                It is the standard language used to create webpages.
+
+                Every website you visit is built using HTML together with CSS and JavaScript.
+
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>🌍 What can HTML do?</h2>
+
+            <ul>
+
+                <li>Create web pages</li>
+
+                <li>Add text and headings</li>
+
+                <li>Insert images</li>
+
+                <li>Create hyperlinks</li>
+
+                <li>Create tables</li>
+
+                <li>Create forms</li>
+
+                <li>Embed videos and audio</li>
+
+                <li>Build the structure of a website</li>
+
+            </ul>
+
+        </div>
+
+        <div class="card">
+
+            <h2>📂 Basic HTML Structure</h2>
+
+            <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;title&gt;My Website&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;h1&gt;Hello World&lt;/h1&gt;
+
+    &lt;p&gt;Welcome to HTML&lt;/p&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;
+</pre>
+
+        </div>
+
+        <div class="card">
+
+            <h2>📝 Explanation</h2>
+
+            <table border="1" cellpadding="10">
+
+                <tr>
+
+                    <th>Tag</th>
+
+                    <th>Description</th>
+
+                </tr>
+
+                <tr>
+
+                    <td>&lt;!DOCTYPE html&gt;</td>
+
+                    <td>Tells the browser this is an HTML5 document.</td>
+
+                </tr>
+
+                <tr>
+
+                    <td>&lt;html&gt;</td>
+
+                    <td>The root element of the webpage.</td>
+
+                </tr>
+
+                <tr>
+
+                    <td>&lt;head&gt;</td>
+
+                    <td>Contains information about the webpage.</td>
+
+                </tr>
+
+                <tr>
+
+                    <td>&lt;title&gt;</td>
+
+                    <td>Shows the page title in the browser.</td>
+
+                </tr>
+
+                <tr>
+
+                    <td>&lt;body&gt;</td>
+
+                    <td>Contains everything displayed on the webpage.</td>
+
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="card">
+
+            <h2>💻 Example</h2>
+
+            <pre>
+&lt;h1&gt;My First Website&lt;/h1&gt;
+
+&lt;p&gt;I am learning HTML.&lt;/p&gt;
+
+&lt;img src="cat.jpg"&gt;
+</pre>
+
+        </div>
+
+        <div class="card">
+
+            <h2>📚 Exercise</h2>
+
+            <p>Create a webpage that contains:</p>
+
+            <ol>
+
+                <li>A title</li>
+
+                <li>A heading</li>
+
+                <li>A paragraph</li>
+
+                <li>An image</li>
+
+                <li>A link</li>
+
+            </ol>
+
+        </div>
+
+        <div class="card quiz">
+
+            <h2>📝 Quiz</h2>
+
+            <p><b>1. What does HTML stand for?</b></p>
+
+            <label>
+                <input type="radio" name="quiz" value="correct">
+                HyperText Markup Language
+            </label>
+
+            <br><br>
+
+            <label>
+                <input type="radio" name="quiz" value="wrong">
+                Home Tool Markup Language
+            </label>
+
+            <br><br>
+
+            <label>
+                <input type="radio" name="quiz" value="wrong">
+                Hyper Transfer Main Language
+            </label>
+
+            <br><br>
+
+            <label>
+                <input type="radio" name="quiz" value="wrong">
+                Hyper Text Modern Language
+            </label>
+
+            <br><br>
+
+            <button onclick="checkAnswer(this)"
+                    data-correct-answer="correct"
+                    data-correct-feedback="HTML stands for HyperText Markup Language."
+                    data-incorrect-feedback="Please try again.">
+                Check Answer
+            </button>
+
+            <p id="answer" class="answer"></p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>🎯 Summary</h2>
+
+            <p>
+
+                ✔ HTML creates webpages.<br>
+
+                ✔ HTML uses tags.<br>
+
+                ✔ HTML works together with CSS and JavaScript.<br>
+
+                ✔ HTML is the foundation of every website.
+
+            </p>
+
+        </div>
+
+        <div class="nav-buttons" style="justify-content: flex-end;">
+            <a href="lesson2.html" class="btn-nav">
+                Next Lesson →
+            </a>
+        </div>
+    </div>
+    </main>
+
+    <!-- Footer will be loaded here by JavaScript -->
+    <div id="footer-placeholder"></div>
+
+    <script src="js/quiz.js"></script>
+
+</body>
+
+</html>

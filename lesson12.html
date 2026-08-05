@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 12 - HTML5 Features</title>
+
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="lesson.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="js/main.js" defer></script>
+
+</head>
+
+<body>
+
+    <header>
+        <!-- Navbar will be loaded here by JavaScript -->
+        <div id="navbar-placeholder"></div>
+    </header>
+
+    <main>
+        <div class="lesson-header">
+            <h1>HTML Course</h1>
+            <h3>Lesson 12: HTML5 Features</h3>
+        </div>
+
+        <div class="lesson-container">
+
+        <div class="card">
+            <h2>📖 What's New in HTML5?</h2>
+            <p>
+                HTML5 is the latest version of HTML, and it introduced many new features to make web development easier and more powerful. This includes new semantic elements, new form input types, and new APIs for graphics and multimedia.
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>🆕 New Form Input Types</h2>
+            <p>HTML5 added several new input types for forms, which can provide better user experience and validation on mobile devices.</p>
+            <ul>
+                <li><b>color:</b> A color picker.</li>
+                <li><b>date:</b> A date picker.</li>
+                <li><b>email:</b> For email addresses (with validation).</li>
+                <li><b>number:</b> For numerical input.</li>
+                <li><b>range:</b> A slider control.</li>
+                <li><b>search:</b> A search field.</li>
+                <li><b>tel:</b> For telephone numbers.</li>
+                <li><b>url:</b> For URLs.</li>
+            </ul>
+            <pre>
+&lt;label for="favcolor"&gt;Select your favorite color:&lt;/label&gt;
+&lt;input type="color" id="favcolor" name="favcolor"&gt;
+
+&lt;label for="birthday"&gt;Birthday:&lt;/label&gt;
+&lt;input type="date" id="birthday" name="birthday"&gt;
+</pre>
+        </div>
+
+        <div class="card">
+            <h2>🎨 Graphics with &lt;canvas&gt; and &lt;svg&gt;</h2>
+            <p>
+                <b>&lt;canvas&gt;</b> is used to draw graphics on the fly, via JavaScript. It's great for games, graphs, and photo manipulations.
+            </p>
+            <p>
+                <b>&lt;svg&gt;</b> (Scalable Vector Graphics) is used to define vector-based graphics for the Web. SVG images can be scaled to any size without losing quality.
+            </p>
+            <pre>
+&lt;!-- Canvas is just a container for graphics --&gt;
+&lt;canvas id="myCanvas" width="200" height="100"&gt;&lt;/canvas&gt;
+
+&lt;!-- SVG draws the shape directly in HTML --&gt;
+&lt;svg width="100" height="100"&gt;
+  &lt;circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" /&gt;
+&lt;/svg&gt;
+</pre>
+        </div>
+
+        <div class="card">
+            <h2>💡 Other Notable Features</h2>
+            <ul>
+                <li><b>Geolocation API:</b> Allows the browser to get the geographical position of the user.</li>
+                <li><b>Drag and Drop API:</b> Provides a simple way to implement drag-and-drop functionality.</li>
+                <li><b>Web Storage (localStorage and sessionStorage):</b> A way to store data on the client-side, more powerful than cookies.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>📚 Practice</h2>
+            <p>Experiment with the new HTML5 features:</p>
+            <ol>
+                <li>Create a form with `date` and `color` input types.</li>
+                <li>Try to draw a simple rectangle or circle using SVG.</li>
+            </ol>
+        </div>
+
+        <div class="card">
+            <h2>📝 Quiz</h2>
+            <p>
+                Which HTML5 element is used for drawing graphics with JavaScript?
+            </p>
+            <label><input type="radio" name="quiz" value="A"> &lt;svg&gt;</label><br><br>
+            <label><input type="radio" name="quiz" value="B"> &lt;canvas&gt;</label><br><br>
+            <label><input type="radio" name="quiz" value="C"> &lt;img&gt;</label><br><br>
+            <label><input type="radio" name="quiz" value="D"> &lt;picture&gt;</label><br><br>
+
+            <button onclick="checkAnswer(this)"
+                    data-correct-answer="B"
+                    data-correct-feedback="The &lt;canvas&gt; element is used as a container for JavaScript graphics."
+                    data-incorrect-feedback="Please try again.">
+                Check Answer
+            </button>
+
+            <p id="answer" class="answer"></p>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="lesson11.html" class="btn-nav">⬅ Previous Lesson</a>
+            <a href="lesson13.html" class="btn-nav">Next Lesson ➜</a>
+        </div>
+
+        </div>
+    </main>
+
+    <!-- Footer will be loaded here by JavaScript -->
+    <div id="footer-placeholder"></div>
+
+    <script src="js/quiz.js"></script>
+
+</body>
+
+</html>

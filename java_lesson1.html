@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Lesson 1 - Introduction to Java</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="lesson.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="js/main.js" defer></script>
+
+</head>
+
+<body>
+
+    <header>
+        <!-- Navbar will be loaded here by JavaScript -->
+        <div id="navbar-placeholder"></div>
+    </header>
+
+    <main>
+        <div class="lesson-header">
+            <h1>Java Course</h1>
+        <h3>Lesson 1: Introduction to Java</h3>
+        </div>
+
+    <div class="lesson-container">
+
+        <div class="card">
+            <h2>📖 What is Java?</h2>
+            <p>
+                Java is a popular, high-level, object-oriented programming language. It was designed to have as few implementation dependencies as possible, which means a Java program can run on any platform that has a Java Virtual Machine (JVM). This principle is known as "Write Once, Run Anywhere" (WORA).
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>🌟 Key Features of Java</h2>
+            <ul>
+                <li><strong>Platform Independent:</strong> Java code is compiled into bytecode, which can run on any device with a JVM.</li>
+                <li><strong>Object-Oriented:</strong> Everything in Java is an object, which helps in building modular and reusable code.</li>
+                <li><strong>Robust and Secure:</strong> Java has strong memory management and security features, making it reliable for large-scale applications.</li>
+                <li><strong>Widely Used:</strong> It's used for web applications, Android apps, enterprise software, big data, and much more.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>💻 "Hello, World!" in Java</h2>
+            <p>Here is what a simple Java program looks like:</p>
+            <pre>
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+</pre>
+            <p>Don't worry if this looks complex. We will break it down in the upcoming lessons!</p>
+        </div>
+
+        <div class="card">
+            <h2>📚 Practice</h2>
+            <p>Think about why a company might choose Java to build a large banking application. Consider its features like security and platform independence.</p>
+        </div>
+
+        <div class="card">
+            <h2>📝 Quiz</h2>
+            <p>
+                What is the main principle behind Java's ability to run on different operating systems?
+            </p>
+            <label><input type="radio" name="quiz" value="A"> Object-Oriented Programming</label><br><br>
+            <label><input type="radio" name="quiz" value="B"> Write Once, Run Anywhere (WORA)</label><br><br>
+            <label><input type="radio" name="quiz" value="C"> Strong Memory Management</label><br><br>
+            <label><input type="radio" name="quiz" value="D"> High-Level Language</label><br><br>
+
+            <button onclick="checkAnswer(this)" data-correct-answer="B" data-correct-feedback="'Write Once, Run Anywhere' (WORA) is the key principle of Java's platform independence." data-incorrect-feedback="Please try again.">Check Answer</button>
+
+            <p id="answer" class="answer"></p>
+        </div>
+
+        <div class="card">
+            <h2>🎯 Summary</h2>
+            <p>
+                ✔ Java is a versatile, object-oriented programming language.<br>
+                ✔ Its "Write Once, Run Anywhere" feature makes it platform-independent.<br>
+                ✔ Java is known for its security and robustness.<br>
+                ✔ It is a cornerstone for many large-scale web and mobile applications.
+            </p>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="home.html" class="btn-nav">⬅ Back to Courses</a>
+            <a href="java_lesson2.html" class="btn-nav">Next Lesson ➜</a>
+        </div>
+
+    </div>
+    </main>
+
+    <!-- Footer will be loaded here by JavaScript -->
+    <div id="footer-placeholder"></div>
+
+    <script src="js/quiz.js"></script>
+
+</body>
+
+</html>

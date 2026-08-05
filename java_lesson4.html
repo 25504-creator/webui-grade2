@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Lesson 4 - Variables & Data Types</title>
+
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="lesson.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="js/main.js" defer></script>
+
+</head>
+
+<body>
+
+    <header>
+        <!-- Navbar will be loaded here by JavaScript -->
+        <div id="navbar-placeholder"></div>
+    </header>
+
+    <main>
+        <div class="lesson-header">
+            <h1>Java Course</h1>
+            <h3>Lesson 4: Variables & Data Types</h3>
+        </div>
+
+        <div class="lesson-container">
+
+        <div class="card">
+            <h2>📦 What are Variables?</h2>
+            <p>
+                Variables are containers for storing data values. In Java, each variable must have a specific <strong>data type</strong>, which determines the size and type of value it can store.
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>📊 Common Data Types</h2>
+            <p>Java has two main categories of data types: primitive and non-primitive (or reference).</p>
+            <h4>Primitive Types</h4>
+            <table>
+                <tr><th>Type</th><th>Description</th><th>Example</th></tr>
+                <tr><td><code>int</code></td><td>Stores whole numbers (integers)</td><td><code>int age = 25;</code></td></tr>
+                <tr><td><code>double</code></td><td>Stores floating-point numbers (with decimals)</td><td><code>double price = 19.99;</code></td></tr>
+                <tr><td><code>char</code></td><td>Stores single characters</td><td><code>char grade = 'A';</code></td></tr>
+                <tr><td><code>boolean</code></td><td>Stores true or false values</td><td><code>boolean isLoggedIn = true;</code></td></tr>
+            </table>
+            <h4 style="margin-top: 20px;">Non-Primitive Type</h4>
+            <p>The most common non-primitive type is <code>String</code>, which is used to store text.</p>
+            <table>
+                <tr><th>Type</th><th>Description</th><th>Example</th></tr>
+                <tr><td><code>String</code></td><td>Stores a sequence of characters (text)</td><td><code>String name = "Sok";</code></td></tr>
+            </table>
+        </div>
+
+        <div class="card">
+            <h2>💻 Declaring and Using Variables</h2>
+            <p>To create a variable, you must specify the type and assign it a value:</p>
+            <pre>
+// Syntax: type variableName = value;
+
+int myNumber = 10;
+double myDouble = 5.75;
+char myChar = 'D';
+boolean myBool = false;
+String myText = "Hello Java";
+
+// You can print variables to see their values
+System.out.println(myText); // Output: Hello Java
+System.out.println(myNumber); // Output: 10
+
+// You can also change the value of a variable
+myNumber = 20;
+System.out.println(myNumber); // Output: 20
+</pre>
+        </div>
+
+        <div class="card">
+            <h2>📚 Practice</h2>
+            <p>Create a program that declares variables for:</p>
+            <ol>
+                <li>Your name (String)</li>
+                <li>Your age (int)</li>
+                <li>The price of a coffee (double)</li>
+            </ol>
+            <p>Then, print a sentence that uses all three variables. For example: "My name is [Name], I am [Age] years old, and I bought a coffee for $[Price]."</p>
+        </div>
+
+        <div class="card">
+            <h2>📝 Quiz</h2>
+            <p>
+                Which data type would you use to store a person's first name?
+            </p>
+            <label><input type="radio" name="quiz" value="A"> <code>int</code></label><br><br>
+            <label><input type="radio" name="quiz" value="B"> <code>char</code></label><br><br>
+            <label><input type="radio" name="quiz" value="C"> <code>String</code></label><br><br>
+            <label><input type="radio" name="quiz" value="D"> <code>boolean</code></label><br><br>
+
+            <button onclick="checkAnswer(this)"
+                    data-correct-answer="C"
+                    data-correct-feedback="`String` is used to store text like a name."
+                    data-incorrect-feedback="`char` is for a single character, not a full name.">
+                Check Answer
+            </button>
+
+            <p id="answer" class="answer"></p>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="java_lesson3.html" class="btn-nav">⬅ Previous Lesson</a>
+            <a href="java_lesson5.html" class="btn-nav">Next Lesson ➜</a>
+        </div>
+
+        </div>
+    </main>
+
+    <!-- Footer will be loaded here by JavaScript -->
+    <div id="footer-placeholder"></div>
+
+    <script src="js/quiz.js"></script>
+
+</body>
+
+</html>

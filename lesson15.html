@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 15 - HTML Mini Project</title>
+
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="lesson.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="js/main.js" defer></script>
+
+</head>
+
+<body>
+
+    <header>
+        <!-- Navbar will be loaded here by JavaScript -->
+        <div id="navbar-placeholder"></div>
+    </header>
+
+    <main>
+        <div class="lesson-header">
+            <h1>HTML Course</h1>
+            <h3>Lesson 15: HTML Mini Project</h3>
+        </div>
+
+        <div class="lesson-container">
+
+        <div class="card">
+            <h2>🚀 Your First Website Project</h2>
+            <p>
+                Congratulations on reaching the final lesson! It's time to combine everything you've learned to build a complete, single-page website. This project will be a simple personal portfolio page.
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>📋 Project Requirements</h2>
+            <p>Create a single HTML file named `portfolio.html`. The page must include the following sections, using semantic HTML tags:</p>
+            <ol>
+                <li>
+                    <strong>A <code>&lt;header&gt;</code>:</strong> Containing your name inside an <code>&lt;h1&gt;</code> tag.
+                </li>
+                <li>
+                    <strong>A <code>&lt;nav&gt;</code>:</strong> With links that jump to the "About Me", "My Skills", and "Contact" sections of the page. (Hint: Use IDs and anchor links like <code>&lt;a href="#about"&gt;</code>).
+                </li>
+                <li>
+                    <strong>A <code>&lt;main&gt;</code> content area</strong> which contains three <code>&lt;section&gt;</code>s:
+                    <ul>
+                        <li><strong>About Me (id="about"):</strong> An <code>&lt;h2&gt;</code> title, a paragraph about yourself, and an image of you (or a placeholder).</li>
+                        <li><strong>My Skills (id="skills"):</strong> An <code>&lt;h2&gt;</code> title and an unordered list (<code>&lt;ul&gt;</code>) of skills you are learning (e.g., HTML, CSS).</li>
+                        <li><strong>Contact (id="contact"):</strong> An <code>&lt;h2&gt;</code> title and a simple contact form with fields for Name, Email, and a Submit button.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>A <code>&lt;footer&gt;</code>:</strong> Containing a copyright notice (e.g., &copy; 2024 Your Name).
+                </li>
+            </ol>
+        </div>
+
+        <div class="card">
+            <h2>👀 Example of What It Could Look Like</h2>
+            <div class="project-preview">
+                <header>
+                    <h1>Your Name</h1>
+                    <nav>
+                        <a href="#">About</a> | <a href="#">Skills</a> | <a href="#">Contact</a>
+                    </nav>
+                </header>
+                <main>
+                    <section>
+                        <h2>About Me</h2>
+                        <img src="https://picsum.photos/150" alt="My Photo" style="float: left; margin-right: 15px;">
+                        <p>Hello! I am a passionate learner on a journey to become a web developer. I am currently studying HTML with CodeKhmer Learning and excited to build my first project.</p>
+                    </section>
+                    <hr>
+                    <section>
+                        <h2>My Skills</h2>
+                        <ul>
+                            <li>HTML</li>
+                            <li>CSS (learning soon)</li>
+                            <li>JavaScript (learning soon)</li>
+                        </ul>
+                    </section>
+                </main>
+                <footer>
+                    <p>&copy; 2024 Your Name. All rights reserved.</p>
+                </footer>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🏆 Congratulations!</h2>
+            <p>
+                You have completed the HTML course! Building this project solidifies your understanding of HTML structure. The next step in your journey is to learn CSS to style your websites and make them beautiful.
+            </p>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="lesson14.html" class="btn-nav">⬅ Previous Lesson</a>
+            <a href="home.html" class="btn-nav">🎉 Back to Home</a>
+        </div>
+
+        </div>
+    </main>
+
+    <!-- Footer will be loaded here by JavaScript -->
+    <div id="footer-placeholder"></div>
+
+    <script src="js/quiz.js"></script>
+
+</body>
+
+</html>

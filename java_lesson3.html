@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Lesson 3 - First Java Program</title>
+
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="lesson.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="js/main.js" defer></script>
+
+</head>
+
+<body>
+
+    <header>
+        <!-- Navbar will be loaded here by JavaScript -->
+        <div id="navbar-placeholder"></div>
+    </header>
+
+    <main>
+        <div class="lesson-header">
+            <h1>Java Course</h1>
+            <h3>Lesson 3: First Java Program</h3>
+        </div>
+
+        <div class="lesson-container">
+
+        <div class="card">
+            <h2>👋 Hello, World!</h2>
+            <p>
+                It's a tradition in programming to start with a "Hello, World!" program. This simple program will teach you the basic structure of a Java application and how to print output to the console.
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>📂 File and Class Name</h2>
+            <p>In Java, the name of the public class must match the name of the file. For example, if your class is named `MyFirstApp`, the file must be saved as `MyFirstApp.java`.</p>
+        </div>
+
+        <div class="card">
+            <h2>💻 The Code</h2>
+            <p>Create a new file named `Main.java` and type the following code:</p>
+            <pre>
+public class Main {
+    public static void main(String[] args) {
+        // This line prints "Hello, World!" to the console
+        System.out.println("Hello, World!");
+    }
+}
+</pre>
+        </div>
+
+        <div class="card">
+            <h2>🔍 Code Breakdown</h2>
+            <ul>
+                <li><code>public class Main</code>: This declares a public class named `Main`. Every Java application must have at least one class.</li>
+                <li><code>public static void main(String[] args)</code>: This is the <strong>main method</strong>. It's the entry point of your application. The code inside this method will be executed when you run the program.</li>
+                <li><code>System.out.println("Hello, World!");</code>: This is a statement that prints the text "Hello, World!" to the console, followed by a new line.</li>
+                <li><code>// ...</code>: This is a comment. The compiler ignores it. It's used to explain the code.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>🚀 How to Compile and Run</h2>
+            <p>If you are using an IDE like VS Code or IntelliJ, you can usually just click a "Run" button. If you are using the terminal:</p>
+            <ol>
+                <li><strong>Compile:</strong> `javac Main.java` (This creates a `Main.class` file)</li>
+                <li><strong>Run:</strong> `java Main`</li>
+            </ol>
+            <p><strong>Output:</strong></p>
+            <pre style="color: white; background: #333;">Hello, World!</pre>
+        </div>
+
+        <div class="card">
+            <h2>📚 Practice</h2>
+            <p>Modify the "Hello, World!" program to print your name instead.</p>
+        </div>
+
+        <div class="card">
+            <h2>📝 Quiz</h2>
+            <p>
+                Which method is the entry point of any Java application?
+            </p>
+            <label><input type="radio" name="quiz" value="A"> public static void start()</label><br><br>
+            <label><input type="radio" name="quiz" value="B"> public class Main</label><br><br>
+            <label><input type="radio" name="quiz" value="C"> System.out.println()</label><br><br>
+            <label><input type="radio" name="quiz" value="D"> public static void main(String[] args)</label><br><br>
+
+            <button onclick="checkAnswer(this)"
+                    data-correct-answer="D"
+                    data-correct-feedback="The `main` method is the starting point for all Java applications."
+                    data-incorrect-feedback="Please try again.">
+                Check Answer
+            </button>
+
+            <p id="answer" class="answer"></p>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="java_lesson2.html" class="btn-nav">⬅ Previous Lesson</a>
+            <a href="java_lesson4.html" class="btn-nav">Next Lesson ➜</a>
+        </div>
+
+        </div>
+    </main>
+
+    <!-- Footer will be loaded here by JavaScript -->
+    <div id="footer-placeholder"></div>
+
+    <script src="js/quiz.js"></script>
+
+</body>
+
+</html>

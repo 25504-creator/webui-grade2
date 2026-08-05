@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Lesson 10 - Arrays</title>
+
+    <style>
+        :root {
+            --bg-navy: #0d1b2a;
+            --bg-navy-deep: #0a1622;
+            --accent-lime: #b7ff4d;
+            --accent-lime-dark: #8fe022;
+            --card-bg: #13253a;
+            --card-border: rgba(255, 255, 255, 0.08);
+            --text-white: #ffffff;
+            --text-dim: #9fb0c3;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Poppins", Arial, sans-serif;
+            background: var(--bg-navy);
+            color: var(--text-white);
+        }
+
+        header {
+            background: var(--bg-navy-deep);
+            color: var(--text-white);
+            text-align: center;
+            padding: 25px;
+        }
+
+        header h3 {
+            color: var(--accent-lime);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 30px auto;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 14px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
+        }
+
+        h2 {
+            color: var(--accent-lime);
+        }
+
+        pre {
+            background: #222;
+            color: #00ff66;
+            padding: 15px;
+            border-radius: 10px;
+            overflow: auto;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        button {
+            background: var(--accent-lime);
+            color: #0a1622;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 999px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 700;
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background: var(--accent-lime-dark);
+            transform: translateY(-1px);
+        }
+
+        .answer {
+            display: none;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        <h1>CodeKhmer Learning</h1>
+        <h1>Java Course</h1>
+        <h3>Lesson 10: Arrays</h3>
+    </header>
+
+    <div class="container">
+
+        <div class="card">
+            <h2>🔢 What is an Array?</h2>
+            <p>
+                An array is a data structure that can store a fixed-size collection of elements of the <strong>same data type</strong>. Think of it as a list of variables.
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>Declaring and Initializing an Array</h2>
+            <p>You can declare an array by specifying the data type followed by square brackets <code>[]</code>.</p>
+            <pre>
+// Declare an array of strings
+String[] cars;
+
+// Initialize the array with values
+cars = new String[]{"Volvo", "BMW", "Ford"};
+
+// Or, declare and initialize in one line (more common)
+String[] fruits = {"Apple", "Banana", "Orange"};
+int[] numbers = {10, 20, 30, 40, 50};
+</pre>
+        </div>
+
+        <div class="card">
+            <h2>Accessing and Changing Elements</h2>
+            <p>Array elements are accessed by their <strong>index number</strong>. The index starts from <strong>0</strong>.</p>
+            <pre>
+String[] fruits = {"Apple", "Banana", "Orange"};
+
+// Access the first element (index 0)
+System.out.println(fruits[0]); // Output: Apple
+
+// Access the third element (index 2)
+System.out.println(fruits[2]); // Output: Orange
+
+// Change an element
+fruits[1] = "Mango";
+System.out.println(fruits[1]); // Output: Mango
+
+// Get the length of the array
+System.out.println(fruits.length); // Output: 3
+</pre>
+        </div>
+
+        <div class="card">
+            <h2>Looping Through an Array</h2>
+            <p>You can use a <code>for</code> loop to iterate through all the elements of an array.</p>
+            <pre>
+String[] cars = {"Volvo", "BMW", "Ford"};
+for (int i = 0; i < cars.length; i++) {
+    System.out.println(cars[i]);
+}
+
+// There is also a "for-each" loop, which is easier to write:
+for (String car : cars) {
+    System.out.println(car);
+}
+</pre>
+        </div>
+
+        <div class="card">
+            <h2>📚 Practice</h2>
+            <p>Create an array of your 5 favorite numbers. Then, use a loop to calculate and print the sum of all the numbers in the array.</p>
+        </div>
+
+        <div class="card">
+            <h2>📝 Quiz</h2>
+            <p>
+                If you have an array <code>int[] nums = {5, 10, 15};</code>, what is the index of the value <code>15</code>?
+            </p>
+            <label><input type="radio" name="quiz" value="A"> 0</label><br><br>
+            <label><input type="radio" name="quiz" value="B"> 1</label><br><br>
+            <label><input type="radio" name="quiz" value="C"> 2</label><br><br>
+            <label><input type="radio" name="quiz" value="D"> 3</label><br><br>
+
+            <button onclick="checkAnswer()">Check Answer</button>
+
+            <p id="answer" class="answer"></p>
+        </div>
+
+        <div class="card">
+            <h2>🎯 Summary</h2>
+            <p>
+                ✔ Arrays store multiple values of the same type in a single variable.<br>
+                ✔ Array elements are accessed using a zero-based index (<code>array[0]</code>, <code>array[1]</code>, ...).<br>
+                ✔ The <code>.length</code> property gives the size of the array.<br>
+                ✔ Loops are perfect for processing each element in an array.
+            </p>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="java_lesson9.html" class="btn-nav">⬅ Previous Lesson</a>
+            <a href="java_lesson11.html" class="btn-nav">Next Lesson ➜</a>
+        </div>
+
+    </div>
+
+    <script>
+        function checkAnswer() {
+            const answer = document.querySelector('input[name="quiz"]:checked');
+            const result = document.getElementById("answer");
+
+            if (!answer) {
+                result.style.display = "block";
+                result.style.color = "red";
+                result.innerHTML = "❌ Please select an answer.";
+                return;
+            }
+
+            if (answer.value === "C") {
+                result.style.display = "block";
+                result.style.color = "green";
+                result.innerHTML = "✅ Correct! Array indexing starts at 0, so the elements are at index 0 (5), 1 (10), and 2 (15).";
+            } else {
+                result.style.display = "block";
+                result.style.color = "red";
+                result.innerHTML = "❌ Incorrect. Remember that array indexes always start from 0.";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 13 - Responsive Images</title>
+
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="lesson.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="js/main.js" defer></script>
+
+</head>
+
+<body>
+
+    <header>
+        <!-- Navbar will be loaded here by JavaScript -->
+        <div id="navbar-placeholder"></div>
+    </header>
+
+    <main>
+        <div class="lesson-header">
+            <h1>HTML Course</h1>
+            <h3>Lesson 13: Responsive Images</h3>
+        </div>
+
+        <div class="lesson-container">
+
+        <div class="card">
+            <h2>📖 What are Responsive Images?</h2>
+            <p>
+                Responsive images are images that adjust to fit different screen sizes and resolutions. This is crucial for modern web design to ensure images look good and load quickly on both mobile devices and large desktops.
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>🖼️ Using `srcset` for Resolution Switching</h2>
+            <p>The `srcset` attribute allows you to provide a list of different image sources. The browser will then choose the most appropriate one based on the screen's resolution and size.</p>
+            <pre>
+&lt;img srcset="image-small.jpg 480w,
+             image-large.jpg 800w"
+     sizes="(max-width: 600px) 480px,
+            800px"
+     src="image-large.jpg"
+     alt="A responsive image"&gt;
+</pre>
+            <p>
+                - `srcset` defines the set of images and their widths (`w` descriptor).<br>
+                - `sizes` tells the browser how wide the image will be at different viewport widths.<br>
+                - `src` is a fallback for older browsers.
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>🎨 The &lt;picture&gt; Element for Art Direction</h2>
+            <p>The &lt;picture&gt; element gives you more control. You can use it to show completely different images for different screen sizes (art direction).</p>
+            <pre>
+&lt;picture&gt;
+  &lt;source media="(min-width: 650px)" srcset="img_pink_flowers.jpg"&gt;
+  &lt;source media="(min-width: 465px)" srcset="img_white_flower.jpg"&gt;
+  &lt;img src="img_orange_flowers.jpg" alt="Flowers"&gt;
+&lt;/picture&gt;
+</pre>
+            <p>The browser will use the first `&lt;source&gt;` element that matches the media query. The `&lt;img&gt;` is the default and is required.</p>
+        </div>
+
+        <div class="card">
+            <h2>👀 Example Output</h2>
+            <p>Resize your browser window to see the image change. (Note: This example uses placeholder images that look the same but would be different files in a real project).</p>
+            <picture>
+                <source media="(min-width: 800px)" srcset="https://picsum.photos/800/300">
+                <source media="(min-width: 400px)" srcset="https://picsum.photos/400/200">
+                <img src="https://picsum.photos/300/150" alt="A responsive placeholder image" class="demo-img">
+            </picture>
+        </div>
+
+        <div class="card">
+            <h2>💡 Tips</h2>
+            <ul>
+                <li>Use `srcset` when you have the same image in different sizes.</li>
+                <li>Use `&lt;picture&gt;` when you need to show different images or crop an image differently on various screens (art direction).</li>
+                <li>Always include a fallback `&lt;img&gt;` element inside `&lt;picture&gt;`.</li>
+                <li>Optimizing images is key to a fast website.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>📚 Practice</h2>
+            <p>Create a webpage with a `&lt;picture&gt;` element that shows:</p>
+            <ol>
+                <li>A wide "landscape" image on large screens.</li>
+                <li>A "portrait" or square image on small screens.</li>
+            </ol>
+        </div>
+
+        <div class="card">
+            <h2>📝 Quiz</h2>
+            <p>
+                Which element is best for "art direction" (showing different images on different screens)?
+            </p>
+            <label><input type="radio" name="quiz" value="A"> &lt;img&gt; with srcset</label><br><br>
+            <label><input type="radio" name="quiz" value="B"> &lt;picture&gt;</label><br><br>
+            <label><input type="radio" name="quiz" value="C"> &lt;source&gt;</label><br><br>
+            <label><input type="radio" name="quiz" value="D"> &lt;img&gt; with CSS</label><br><br>
+
+            <button onclick="checkAnswer(this)"
+                    data-correct-answer="B"
+                    data-correct-feedback="The &lt;picture&gt; element is ideal for art direction."
+                    data-incorrect-feedback="Please try again.">
+                Check Answer
+            </button>
+
+            <p id="answer" class="answer"></p>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="lesson12.html" class="btn-nav">⬅ Previous Lesson</a>
+            <a href="lesson14.html" class="btn-nav">Next Lesson ➜</a>
+        </div>
+
+        </div>
+    </main>
+
+    <!-- Footer will be loaded here by JavaScript -->
+    <div id="footer-placeholder"></div>
+
+    <script src="js/quiz.js"></script>
+
+</body>
+
+</html>

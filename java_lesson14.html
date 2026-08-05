@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Lesson 14 - Exception Handling</title>
+
+    <style>
+        :root {
+            --bg-navy: #0d1b2a;
+            --bg-navy-deep: #0a1622;
+            --accent-lime: #b7ff4d;
+            --accent-lime-dark: #8fe022;
+            --card-bg: #13253a;
+            --card-border: rgba(255, 255, 255, 0.08);
+            --text-white: #ffffff;
+            --text-dim: #9fb0c3;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Poppins", Arial, sans-serif;
+            background: var(--bg-navy);
+            color: var(--text-white);
+        }
+
+        header {
+            background: var(--bg-navy-deep);
+            color: var(--text-white);
+            text-align: center;
+            padding: 25px;
+        }
+
+        header h3 {
+            color: var(--accent-lime);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 30px auto;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 14px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
+        }
+
+        h2 {
+            color: var(--accent-lime);
+        }
+
+        pre {
+            background: #222;
+            color: #00ff66;
+            padding: 15px;
+            border-radius: 10px;
+            overflow: auto;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        button {
+            background: var(--accent-lime);
+            color: #0a1622;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 999px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 700;
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background: var(--accent-lime-dark);
+            transform: translateY(-1px);
+        }
+
+        .answer {
+            display: none;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        <h1>CodeKhmer Learning</h1>
+        <h1>Java Course</h1>
+        <h3>Lesson 14: Exception Handling</h3>
+    </header>
+
+    <div class="container">
+
+        <div class="card">
+            <h2>💣 What is an Exception?</h2>
+            <p>
+                An exception is an event that occurs during the execution of a program that disrupts the normal flow of instructions. When an error occurs within a method, the method creates an object and hands it off to the runtime system. This object, called an exception object, contains information about the error.
+            </p>
+            <p>Common examples include trying to divide by zero, or accessing an array element that doesn't exist.</p>
+        </div>
+
+        <div class="card">
+            <h2>The <code>try-catch</code> Block</h2>
+            <p>To handle exceptions and prevent your program from crashing, you can use a <code>try-catch</code> block.</p>
+            <ul>
+                <li>The <code>try</code> block contains the code that might generate an exception.</li>
+                <li>The <code>catch</code> block contains the code that handles the exception if one occurs.</li>
+            </ul>
+            <pre>
+try {
+    // Block of code to try
+    int[] myNumbers = {1, 2, 3};
+    System.out.println(myNumbers[10]); // This will cause an error
+} catch (Exception e) {
+    // Block of code to handle errors
+    System.out.println("Something went wrong.");
+    // e.getMessage() can give more details
+}
+// Output: Something went wrong.
+</pre>
+            <p>Without the <code>try-catch</code> block, the program would have crashed with an <code>ArrayIndexOutOfBoundsException</code>.</p>
+        </div>
+
+        <div class="card">
+            <h2>The <code>finally</code> Block</h2>
+            <p>The <code>finally</code> block will be executed regardless of whether an exception was thrown or not. This is useful for code that must always run, such as closing a file or a network connection.</p>
+            <pre>
+try {
+    int result = 10 / 0;
+} catch (ArithmeticException e) {
+    System.out.println("Error: Cannot divide by zero.");
+} finally {
+    System.out.println("The 'try-catch' is finished.");
+}
+</pre>
+        </div>
+
+        <div class="card">
+            <h2>The <code>throw</code> Keyword</h2>
+            <p>The <code>throw</code> statement allows you to create a custom error. This is useful for creating your own validation rules.</p>
+            <pre>
+static void checkAge(int age) {
+    if (age < 18) {
+        // Throw an exception if age is below 18
+        throw new ArithmeticException("Access denied - You must be at least 18 years old.");
+    } else {
+        System.out.println("Access granted - You are old enough!");
+    }
+}
+
+public static void main(String[] args) {
+    checkAge(15); // This will throw the exception
+}
+</pre>
+        </div>
+
+        <div class="card">
+            <h2>📚 Practice</h2>
+            <p>Write a program that has an array of 3 strings. Use a <code>try-catch</code> block to try and access the 5th element of the array. In the <code>catch</code> block, print a friendly error message to the user.</p>
+        </div>
+
+        <div class="card">
+            <h2>📝 Quiz</h2>
+            <p>
+                Which block of code is always executed after a <code>try-catch</code>, regardless of whether an exception occurred?
+            </p>
+            <label><input type="radio" name="quiz" value="A"> <code>try</code></label><br><br>
+            <label><input type="radio" name="quiz" value="B"> <code>catch</code></label><br><br>
+            <label><input type="radio" name="quiz" value="C"> <code>finally</code></label><br><br>
+            <label><input type="radio" name="quiz" value="D"> <code>throw</code></label><br><br>
+
+            <button onclick="checkAnswer()">Check Answer</button> 
+
+            <p id="answer" class="answer"></p>
+        </div>
+
+        <div class="card">
+            <h2>🎯 Summary</h2>
+            <p>
+                ✔ Exceptions are runtime errors that disrupt program flow.<br>
+                ✔ The <code>try</code> block contains code that might cause an exception.<br>
+                ✔ The <code>catch</code> block handles the exception if it occurs.<br>
+                ✔ The <code>finally</code> block executes code after the try-catch, no matter what.<br>
+                ✔ The <code>throw</code> keyword is used to create a custom exception.
+            </p>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="java_lesson13.html" class="btn-nav">⬅ Previous Lesson</a>
+            <a href="java_lesson15.html" class="btn-nav">Next Lesson ➜</a>
+        </div>
+
+    </div>
+
+    <script>
+        function checkAnswer() {
+            const answer = document.querySelector('input[name="quiz"]:checked');
+            const result = document.getElementById("answer");
+
+            if (!answer) {
+                result.style.display = "block";
+                result.style.color = "red";
+                result.innerHTML = "❌ Please select an answer.";
+                return;
+            }
+
+            if (answer.value === "C") {
+                result.style.display = "block";
+                result.style.color = "green";
+                result.innerHTML = "✅ Correct! The `finally` block is always executed.";
+            } else {
+                result.style.display = "block";
+                result.style.color = "red";
+                result.innerHTML = "❌ Incorrect. Please try again.";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

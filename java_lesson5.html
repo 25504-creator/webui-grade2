@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Lesson 5 - Operators</title>
+
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="lesson.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="js/main.js" defer></script>
+
+</head>
+
+<body>
+
+    <header>
+        <!-- Navbar will be loaded here by JavaScript -->
+        <div id="navbar-placeholder"></div>
+    </header>
+
+    <main>
+        <div class="lesson-header">
+            <h1>Java Course</h1>
+            <h3>Lesson 5: Operators</h3>
+        </div>
+
+        <div class="lesson-container">
+
+        <div class="card">
+            <h2>🧮 What are Operators?</h2>
+            <p>
+                Operators are special symbols used to perform operations on variables and values. For example, <code>+</code> is an operator used for addition.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>1. Arithmetic Operators</h3>
+            <p>Used to perform common mathematical operations.</p>
+            <pre>
+int x = 10;
+int y = 3;
+System.out.println(x + y); // 13 (Addition)
+System.out.println(x - y); // 7 (Subtraction)
+System.out.println(x * y); // 30 (Multiplication)
+System.out.println(x / y); // 3 (Division, integer division truncates)
+System.out.println(x % y); // 1 (Modulus - remainder of division)
+</pre>
+        </div>
+
+        <div class="card">
+            <h3>2. Comparison Operators</h3>
+            <p>Used to compare two values. The result is always a <code>boolean</code> (true or false).</p>
+            <pre>
+int a = 5;
+int b = 7;
+System.out.println(a == b); // false (Equal to)
+System.out.println(a != b); // true (Not equal to)
+System.out.println(a > b);  // false (Greater than)
+System.out.println(a < b);  // true (Less than)
+System.out.println(a >= 5); // true (Greater than or equal to)
+</pre>
+        </div>
+
+        <div class="card">
+            <h3>3. Logical Operators</h3>
+            <p>Used to determine the logic between variables or values.</p>
+            <pre>
+int age = 25;
+boolean hasLicense = true;
+
+// Logical AND (&&): both conditions must be true
+System.out.println(age > 18 && hasLicense); // true
+
+// Logical OR (||): at least one condition must be true
+System.out.println(age < 20 || hasLicense); // true
+
+// Logical NOT (!): reverses the boolean value
+System.out.println(!hasLicense); // false
+</pre>
+        </div>
+
+        <div class="card">
+            <h3>4. Assignment Operators</h3>
+            <p>Used to assign values to variables. You can combine them with arithmetic operators for shorthand.</p>
+            <pre>
+int score = 100;
+
+score += 10; // same as score = score + 10; Now score is 110
+score -= 20; // same as score = score - 20; Now score is 90
+score *= 2;  // same as score = score * 2;  Now score is 180
+</pre>
+        </div>
+
+        <div class="card">
+            <h2>📚 Practice</h2>
+            <p>Write a program that checks if a number is both greater than 10 AND less than 100. Use a variable for the number and print the boolean result.</p>
+        </div>
+
+        <div class="card">
+            <h2>📝 Quiz</h2>
+            <p>
+                What is the result of <code>10 % 3</code>?
+            </p>
+            <label><input type="radio" name="quiz" value="A"> 3</label><br><br>
+            <label><input type="radio" name="quiz" value="B"> 3.33</label><br><br>
+            <label><input type="radio" name="quiz" value="C"> 1</label><br><br>
+            <label><input type="radio" name="quiz" value="D"> 0</label><br><br>
+
+            <button onclick="checkAnswer(this)"
+                    data-correct-answer="C"
+                    data-correct-feedback="The modulus operator (%) gives the remainder of a division. 10 divided by 3 is 3 with a remainder of 1."
+                    data-incorrect-feedback="Please try again.">
+                Check Answer
+            </button>
+
+            <p id="answer" class="answer"></p>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="java_lesson4.html" class="btn-nav">⬅ Previous Lesson</a>
+            <a href="java_lesson6.html" class="btn-nav">Next Lesson ➜</a>
+        </div>
+
+        </div>
+    </main>
+
+    <!-- Footer will be loaded here by JavaScript -->
+    <div id="footer-placeholder"></div>
+
+    <script src="js/quiz.js"></script>
+
+</body>
+
+</html>

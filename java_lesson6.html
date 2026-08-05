@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Lesson 6 - Input & Output</title>
+
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="lesson.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="js/main.js" defer></script>
+
+</head>
+
+<body>
+
+    <header>
+        <!-- Navbar will be loaded here by JavaScript -->
+        <div id="navbar-placeholder"></div>
+    </header>
+
+    <main>
+        <div class="lesson-header">
+            <h1>Java Course</h1>
+            <h3>Lesson 6: Input & Output</h3>
+        </div>
+
+        <div class="lesson-container">
+
+        <div class="card">
+            <h2>📤 Output in Java</h2>
+            <p>
+                As we've seen, the primary way to display output in the console is using <code>System.out.println()</code>.
+            </p>
+            <ul>
+                <li><code>System.out.println()</code>: Prints the text and moves the cursor to a new line.</li>
+                <li><code>System.out.print()</code>: Prints the text but keeps the cursor on the same line.</li>
+            </ul>
+            <pre>
+System.out.print("Hello, ");
+System.out.print("World!");
+// Output: Hello, World!
+</pre>
+        </div>
+
+        <div class="card">
+            <h2>📥 Input in Java with Scanner</h2>
+            <p>To get input from the user, we can use the <code>Scanner</code> class, which is part of Java's utility library.</p>
+            <p><strong>Step 1: Import the Scanner class.</strong> This must be at the very top of your file.</p>
+            <pre>import java.util.Scanner;</pre>
+            <p><strong>Step 2: Create a Scanner object.</strong> This object will read input from the keyboard (<code>System.in</code>).</p>
+            <pre>Scanner myScanner = new Scanner(System.in);</pre>
+            <p><strong>Step 3: Read input.</strong> Use methods like <code>nextLine()</code> to read text or <code>nextInt()</code> to read an integer.</p>
+            <pre>
+System.out.println("Enter your name:");
+String name = myScanner.nextLine(); // Reads a line of text
+
+System.out.println("Enter your age:");
+int age = myScanner.nextInt(); // Reads an integer
+</pre>
+        </div>
+
+        <div class="card">
+            <h2>💻 Full Example</h2>
+            <pre>
+import java.util.Scanner; // Step 1
+
+public class UserInput {
+    public static void main(String[] args) {
+        Scanner myScanner = new Scanner(System.in); // Step 2
+
+        System.out.println("Enter your username:");
+        String userName = myScanner.nextLine(); // Step 3
+
+        System.out.println("Username is: " + userName);
+        
+        myScanner.close(); // Good practice to close the scanner
+    }
+}
+</pre>
+        </div>
+
+        <div class="card">
+            <h2>📚 Practice</h2>
+            <p>Write a program that asks the user for their favorite food and their favorite number. Then, print a message like: "Your favorite food is [food] and your favorite number is [number]."</p>
+        </div>
+
+        <div class="card">
+            <h2>📝 Quiz</h2>
+            <p>
+                Which method of the `Scanner` class is used to read a whole number from the user?
+            </p>
+            <label><input type="radio" name="quiz" value="A"> <code>nextLine()</code></label><br><br>
+            <label><input type="radio" name="quiz" value="B"> <code>nextDouble()</code></label><br><br>
+            <label><input type="radio" name="quiz" value="C"> <code>nextInt()</code></label><br><br>
+            <label><input type="radio" name="quiz" value="D"> <code>next()</code></label><br><br>
+
+            <button onclick="checkAnswer(this)"
+                    data-correct-answer="C"
+                    data-correct-feedback="`nextInt()` is used to read an integer value."
+                    data-incorrect-feedback="`nextLine()` is for reading strings.">
+                Check Answer
+            </button>
+
+            <p id="answer" class="answer"></p>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="java_lesson5.html" class="btn-nav">⬅ Previous Lesson</a>
+            <a href="java_lesson7.html" class="btn-nav">Next Lesson ➜</a>
+        </div>
+
+        </div>
+    </main>
+
+    <!-- Footer will be loaded here by JavaScript -->
+    <div id="footer-placeholder"></div>
+
+    <script src="js/quiz.js"></script>
+
+</body>
+
+</html>

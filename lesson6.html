@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 6 - HTML Lists</title>
+
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="lesson.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="js/main.js" defer></script>
+
+</head>
+
+<body>
+
+    <header>
+        <!-- Navbar will be loaded here by JavaScript -->
+        <div id="navbar-placeholder"></div>
+    </header>
+
+    <main>
+        <div class="lesson-header">
+            <h1>HTML Course</h1>
+            <h3>Lesson 6: HTML Lists</h3>
+        </div>
+
+        <div class="lesson-container">
+
+        <div class="card">
+
+            <h2>📖 What is a List?</h2>
+
+            <p>
+
+                HTML lists are used to organize information clearly.
+
+                There are three types of HTML lists.
+
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>📚 Types of Lists</h2>
+
+            <table>
+
+                <tr>
+                    <th>Tag</th>
+                    <th>Description</th>
+                </tr>
+
+                <tr>
+                    <td>&lt;ul&gt;</td>
+                    <td>Unordered List (Bullet List)</td>
+                </tr>
+
+                <tr>
+                    <td>&lt;ol&gt;</td>
+                    <td>Ordered List (Number List)</td>
+                </tr>
+
+                <tr>
+                    <td>&lt;dl&gt;</td>
+                    <td>Description List</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="card">
+
+            <h2>💻 Example 1 : Unordered List</h2>
+
+            <pre>
+&lt;ul&gt;
+   &lt;li&gt;HTML&lt;/li&gt;
+   &lt;li&gt;CSS&lt;/li&gt;
+   &lt;li&gt;JavaScript&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+
+            <div class="demo-box">
+
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <h2>💻 Example 2 : Ordered List</h2>
+
+            <pre>
+&lt;ol&gt;
+   &lt;li&gt;Wake up&lt;/li&gt;
+   &lt;li&gt;Study HTML&lt;/li&gt;
+   &lt;li&gt;Practice Coding&lt;/li&gt;
+&lt;/ol&gt;
+</pre>
+
+            <div class="demo-box">
+
+                <ol>
+                    <li>Wake up</li>
+                    <li>Study HTML</li>
+                    <li>Practice Coding</li>
+                </ol>
+
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <h2>💻 Example 3 : Description List</h2>
+
+            <pre>
+&lt;dl&gt;
+&lt;dt&gt;HTML&lt;/dt&gt;
+&lt;dd&gt;Markup Language&lt;/dd&gt;
+
+&lt;dt&gt;CSS&lt;/dt&gt;
+&lt;dd&gt;Styles Web Pages&lt;/dd&gt;
+&lt;/dl&gt;
+</pre>
+
+            <div class="demo-box">
+
+                <dl>
+
+                    <dt><b>HTML</b></dt>
+
+                    <dd>Markup Language</dd>
+
+                    <dt><b>CSS</b></dt>
+
+                    <dd>Styles Web Pages</dd>
+
+                </dl>
+
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <h2>💡 Tips</h2>
+
+            <ul>
+
+                <li>Use &lt;ul&gt; when the order is not important.</li>
+
+                <li>Use &lt;ol&gt; when the order is important.</li>
+
+                <li>Use &lt;li&gt; inside both ul and ol.</li>
+
+                <li>Use &lt;dl&gt; for terms and definitions.</li>
+
+            </ul>
+
+        </div>
+
+        <div class="card">
+
+            <h2>📚 Practice</h2>
+
+            <p>Create the following lists:</p>
+
+            <ol>
+
+                <li>Your favorite foods.</li>
+
+                <li>Your daily schedule.</li>
+
+                <li>Programming languages and descriptions.</li>
+
+            </ol>
+
+        </div>
+
+        <div class="card">
+
+            <h2>📝 Quiz</h2>
+
+            <p>
+
+                Which HTML tag creates a numbered list?
+
+            </p>
+
+            <label>
+
+                <input type="radio" name="quiz" value="A">
+
+                &lt;ul&gt;
+
+            </label>
+
+            <br><br>
+
+            <label>
+
+                <input type="radio" name="quiz" value="B">
+
+                &lt;ol&gt;
+
+            </label>
+
+            <br><br>
+
+            <label>
+
+                <input type="radio" name="quiz" value="C">
+
+                &lt;li&gt;
+
+            </label>
+
+            <br><br>
+
+            <label>
+
+                <input type="radio" name="quiz" value="D">
+
+                &lt;dl&gt;
+
+            </label>
+
+            <br><br>
+
+            <button onclick="checkAnswer(this)"
+                    data-correct-answer="B"
+                    data-correct-feedback="The &lt;ol&gt; tag creates a numbered list."
+                    data-incorrect-feedback="Please try again.">
+                Check Answer
+            </button>
+
+            <p id="answer" class="answer"></p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>🎯 Summary</h2>
+
+            <p>
+
+                ✔ HTML provides three list types.<br>
+
+                ✔ Use <b>&lt;ul&gt;</b> for bullet lists.<br>
+
+                ✔ Use <b>&lt;ol&gt;</b> for numbered lists.<br>
+
+                ✔ Use <b>&lt;dl&gt;</b> for description lists.<br>
+
+                ✔ Use <b>&lt;li&gt;</b> to create list items.
+
+            </p>
+
+        </div>
+
+        <div class="nav-buttons">
+            <a href="lesson5.html" class="btn-nav">⬅ Previous Lesson</a>
+            <a href="lesson7.html" class="btn-nav">Next Lesson ➜</a>
+        </div>
+
+        </div>
+    </main>
+
+    <!-- Footer will be loaded here by JavaScript -->
+    <div id="footer-placeholder"></div>
+
+    <script src="js/quiz.js"></script>
+
+</body>
+
+</html>

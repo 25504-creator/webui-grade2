@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Sign Up</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="Login.css">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/Login.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="left-content">
+            <h1>Web Design &amp;<br><span class="accent">Development</span> Course</h1>
+
+            <ul class="feature-list">
+                <li>
+                    <ion-icon name="code-slash-outline"></ion-icon>
+                    <span>HTML &amp; CSS Fundamentals</span>
+                </li>
+                <li>
+                    <ion-icon name="logo-html5"></ion-icon>
+                    <span>Build Real Websites</span>
+                </li>
+                <li>
+                    <ion-icon name="school-outline"></ion-icon>
+                    <span>Step-by-Step Lessons</span>
+                </li>
+                <li>
+                    <ion-icon name="help-circle-outline"></ion-icon>
+                    <span>Quizzes &amp; Practice</span>
+                </li>
+                <li>
+                    <ion-icon name="rocket-outline"></ion-icon>
+                    <span>Learn at Your Own Pace</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- ផ្នែកទម្រង់ Login ខាងស្តាំ -->
+        <div class="form-box">
+            <div id="loginForm" class="form-content active">
+                <h2>Login</h2>
+                <div class="input-box">
+                    <input type="email" id="loginEmail" placeholder="Email" required>
+                    <ion-icon name="mail-outline"></ion-icon>
+                </div>
+                <div class="input-box">
+                    <input type="password" id="loginPassword" placeholder="Password" required>
+                    <ion-icon name="eye-off-outline" id="toggleLoginPassword"></ion-icon>
+                </div>
+                <div class="remember-forget">
+                    <label><input type="checkbox"> Remember me</label>
+                    <a href="#">Forgot Password?</a>
+                </div>
+                <button class="btn" onclick="handleLogin()">Login</button>
+                <div class="login-register">
+                    <p>Don't have an account? <a href="#" onclick="showForm('signup')">Register</a></p>
+                </div>
+
+                <!-- ប៊ូតុងចុចចូលតាមគណនី SNS -->
+                <div class="icons">
+                    <a href="#" onclick="loginWithGoogle()"><ion-icon name="logo-google"></ion-icon></a>
+                    <a href="#" onclick="loginWithFacebook()"><ion-icon name="logo-facebook"></ion-icon></a>
+                    <a href="#" onclick="loginWithGithub()"><ion-icon name="logo-github"></ion-icon></a>
+                </div>
+            </div>
+
+            <!-- ផ្ទាំងចុច Register -->
+            <div id="signupForm" class="form-content">
+                <h2>Registration</h2>
+                <div class="input-box">
+                    <input type="text" id="signupUsername" placeholder="Username" required>
+                    <ion-icon name="person-outline"></ion-icon>
+                </div>
+                <div class="input-box">
+                    <input type="email" id="signupEmail" placeholder="Email" required>
+                    <ion-icon name="mail-outline"></ion-icon>
+                </div>
+                <div class="input-box">
+                    <input type="password" id="signupPassword" placeholder="Password" required>
+                    <ion-icon name="eye-off-outline" id="toggleSignupPassword"></ion-icon>
+                </div>
+                <div class="input-box">
+                    <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+                    <ion-icon name="eye-off-outline" id="toggleConfirmPassword"></ion-icon>
+                </div>
+                <div class="remember-forget">
+                    <label><input type="checkbox" required> I agree to the terms &amp; conditions</label>
+                </div>
+                <button class="btn" onclick="handleSignup()">Register</button>
+                <div class="login-register">
+                    <p>Already have an account? <a href="#" onclick="showForm('login')">Login</a></p>
+                </div>
+            </div>
+
+            <!-- ផ្ទាំងពេល Login ជោគជ័យ -->
+            <div id="welcomeBox" class="form-content welcome-box">
+                <h2>Welcome Back!</h2>
+                <p>You have successfully logged in.</p>
+                <button class="btn" onclick="window.location.href='home.html'">Go to Dashboard</button>
+            </div>
+
+            <p id="errorMessage" class="error-message"></p>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

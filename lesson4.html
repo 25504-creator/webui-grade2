@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 4 - HTML Links</title>
+
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="lesson.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="js/main.js" defer></script>
+
+</head>
+
+<body>
+
+    <header>
+        <!-- Navbar will be loaded here by JavaScript -->
+        <div id="navbar-placeholder"></div>
+    </header>
+
+    <main>
+        <div class="lesson-header">
+            <h1>HTML Course</h1>
+            <h3>Lesson 4: HTML Links</h3>
+        </div>
+
+        <div class="lesson-container">
+
+        <div class="card">
+
+            <h2>📖 What is a Link?</h2>
+
+            <p>
+
+                HTML links allow users to move from one webpage to another.
+                Links are created using the <b>&lt;a&gt;</b> tag.
+
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>📚 Basic Syntax</h2>
+
+            <pre>
+&lt;a href="https://www.google.com"&gt;
+Visit Google
+&lt;/a&gt;
+</pre>
+
+        </div>
+
+        <div class="card">
+
+            <h2>📝 Link Attributes</h2>
+
+            <table>
+
+                <tr>
+                    <th>Attribute</th>
+                    <th>Description</th>
+                </tr>
+
+                <tr>
+                    <td>href</td>
+                    <td>Destination URL</td>
+                </tr>
+
+                <tr>
+                    <td>target="_blank"</td>
+                    <td>Open in new tab</td>
+                </tr>
+
+                <tr>
+                    <td>title</td>
+                    <td>Tooltip text</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="card">
+
+            <h2>💻 Examples</h2>
+
+            <pre>
+&lt;a href="https://www.google.com"&gt;
+Google
+&lt;/a&gt;
+
+&lt;a href="page2.html"&gt;
+Next Page
+&lt;/a&gt;
+
+&lt;a href="https://www.youtube.com"
+target="_blank"&gt;
+YouTube
+&lt;/a&gt;
+</pre>
+
+        </div>
+
+        <div class="card">
+
+            <h2>👀 Output</h2>
+
+            <p>
+
+                <a href="https://www.google.com" target="_blank" class="demo-link">
+                    Visit Google
+                </a>
+
+            </p>
+
+            <p>
+
+                <a href="https://www.youtube.com" target="_blank" class="demo-link">
+                    Visit YouTube
+                </a>
+
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>💡 Tips</h2>
+
+            <ul>
+
+                <li>Always use the <b>href</b> attribute.</li>
+
+                <li>Use <b>target="_blank"</b> to open a new tab.</li>
+
+                <li>Use meaningful link text.</li>
+
+                <li>Avoid writing "Click Here".</li>
+
+            </ul>
+
+        </div>
+
+        <div class="card">
+
+            <h2>📚 Practice</h2>
+
+            <p>Create the following links:</p>
+
+            <ol>
+
+                <li>Google</li>
+
+                <li>YouTube</li>
+
+                <li>Facebook</li>
+
+                <li>Your own webpage</li>
+
+            </ol>
+
+        </div>
+
+        <div class="card">
+
+            <h2>📝 Quiz</h2>
+
+            <p>
+
+                Which HTML tag creates a hyperlink?
+
+            </p>
+
+            <label>
+
+                <input type="radio" name="quiz" value="A">
+
+                &lt;img&gt;
+
+            </label>
+
+            <br><br>
+
+            <label>
+
+                <input type="radio" name="quiz" value="B">
+
+                &lt;a&gt;
+
+            </label>
+
+            <br><br>
+
+            <label>
+
+                <input type="radio" name="quiz" value="C">
+
+                &lt;link&gt;
+
+            </label>
+
+            <br><br>
+
+            <label>
+
+                <input type="radio" name="quiz" value="D">
+
+                &lt;url&gt;
+
+            </label>
+
+            <br><br>
+
+            <button onclick="checkAnswer(this)"
+                    data-correct-answer="B"
+                    data-correct-feedback="The &lt;a&gt; tag is used to create hyperlinks."
+                    data-incorrect-feedback="Please try again.">
+                Check Answer
+            </button>
+
+            <p id="answer" class="answer"></p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>🎯 Summary</h2>
+
+            <p>
+
+                ✔ HTML links are created using the <b>&lt;a&gt;</b> tag.<br>
+
+                ✔ The <b>href</b> attribute specifies the destination.<br>
+
+                ✔ Use <b>target="_blank"</b> to open a new tab.<br>
+
+                ✔ Links help users navigate between webpages.
+
+            </p>
+
+        </div>
+
+        <div class="nav-buttons">
+            <a href="lesson3.html" class="btn-nav">⬅ Previous Lesson</a>
+            <a href="lesson5.html" class="btn-nav">Next Lesson ➜</a>
+        </div>
+
+        </div>
+    </main>
+
+    <!-- Footer will be loaded here by JavaScript -->
+    <div id="footer-placeholder"></div>
+
+    <script src="js/quiz.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Lesson 7 - If Statements</title>
+
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="lesson.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="js/main.js" defer></script>
+
+</head>
+
+<body>
+
+    <header>
+        <!-- Navbar will be loaded here by JavaScript -->
+        <div id="navbar-placeholder"></div>
+    </header>
+
+    <main>
+        <div class="lesson-header">
+            <h1>Java Course</h1>
+            <h3>Lesson 7: If Statements</h3>
+        </div>
+
+        <div class="lesson-container">
+
+        <div class="card">
+            <h2>🤔 Making Decisions</h2>
+            <p>
+                In programming, we often need to perform different actions based on different conditions. The <code>if</code> statement allows us to execute a block of code only if a specified condition is true.
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>Basic <code>if</code> Statement</h2>
+            <p>The code inside the curly braces <code>{}</code> only runs if the condition in the parentheses <code>()</code> is true.</p>
+            <pre>
+int age = 20;
+if (age >= 18) {
+    System.out.println("You are an adult.");
+}
+</pre>
+        </div>
+
+        <div class="card">
+            <h2>The <code>if-else</code> Statement</h2>
+            <p>Use the <code>else</code> keyword to specify a block of code to be executed if the condition is false.</p>
+            <pre>
+int time = 22;
+if (time < 18) {
+    System.out.println("Good day.");
+} else {
+    System.out.println("Good evening.");
+}
+// Output: Good evening.
+</pre>
+        </div>
+
+        <div class="card">
+            <h2>The <code>if-else if-else</code> Statement</h2>
+            <p>Use the <code>else if</code> keyword to specify a new condition to test, if the first condition is false.</p>
+            <pre>
+int score = 85;
+if (score >= 90) {
+    System.out.println("Grade: A");
+} else if (score >= 80) {
+    System.out.println("Grade: B");
+} else {
+    System.out.println("Grade: C or lower");
+}
+// Output: Grade: B
+</pre>
+        </div>
+
+        <div class="card">
+            <h2>📚 Practice</h2>
+            <p>Write a program that asks the user for a number. Then, use if-else statements to print whether the number is positive, negative, or zero.</p>
+        </div>
+
+        <div class="card">
+            <h2>📝 Quiz</h2>
+            <p>
+                Given <code>int x = 10;</code>, which of the following conditions is <strong>true</strong>?
+            </p>
+            <label><input type="radio" name="quiz" value="A"> <code>x == 5</code></label><br><br>
+            <label><input type="radio" name="quiz" value="B"> <code>x > 10</code></label><br><br>
+            <label><input type="radio" name="quiz" value="C"> <code>x < 5</code></label><br><br>
+            <label><input type="radio" name="quiz" value="D"> <code>x >= 10</code></label><br><br>
+
+            <button onclick="checkAnswer(this)"
+                    data-correct-answer="D"
+                    data-correct-feedback="`x >= 10` is true because 10 is greater than or equal to 10."
+                    data-incorrect-feedback="Please review comparison operators.">
+                Check Answer
+            </button>
+
+            <p id="answer" class="answer"></p>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="java_lesson6.html" class="btn-nav">⬅ Previous Lesson</a>
+            <a href="java_lesson8.html" class="btn-nav">Next Lesson ➜</a>
+        </div>
+
+        </div>
+    </main>
+
+    <!-- Footer will be loaded here by JavaScript -->
+    <div id="footer-placeholder"></div>
+
+    <script src="js/quiz.js"></script>
+
+</body>
+
+</html>

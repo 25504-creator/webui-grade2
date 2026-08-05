@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 2 - HTML Document Structure</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="lesson.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="js/main.js" defer></script>
+
+</head>
+
+<body>
+
+    <header>
+        <!-- Navbar will be loaded here by JavaScript -->
+        <div id="navbar-placeholder"></div>
+    </header>
+
+    <main>
+        <div class="lesson-header">
+            <h1>HTML Course</h1>
+            <h3>Lesson 2: HTML Document Structure</h3>
+        </div>
+
+    <div class="lesson-container">
+
+        <div class="card">
+            <h2>📖 What is an HTML Document?</h2>
+
+            <p>
+                Every HTML webpage follows the same basic structure.
+                The browser reads the HTML file from top to bottom.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>📂 Basic HTML Structure</h2>
+
+            <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;My Website&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;h1&gt;Hello World&lt;/h1&gt;
+
+    &lt;p&gt;Welcome to HTML&lt;/p&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;
+</pre>
+
+        </div>
+
+        <div class="card">
+
+            <h2>📝 Explanation</h2>
+
+            <table border="1" cellpadding="10" cellspacing="0">
+
+                <tr>
+                    <th>Tag</th>
+                    <th>Description</th>
+                </tr>
+
+                <tr>
+                    <td>&lt;!DOCTYPE html&gt;</td>
+                    <td>Declares HTML5 document.</td>
+                </tr>
+
+                <tr>
+                    <td>&lt;html&gt;</td>
+                    <td>The root element.</td>
+                </tr>
+
+                <tr>
+                    <td>&lt;head&gt;</td>
+                    <td>Contains page information.</td>
+                </tr>
+
+                <tr>
+                    <td>&lt;meta charset&gt;</td>
+                    <td>Supports different languages.</td>
+                </tr>
+
+                <tr>
+                    <td>&lt;title&gt;</td>
+                    <td>Browser tab title.</td>
+                </tr>
+
+                <tr>
+                    <td>&lt;body&gt;</td>
+                    <td>Everything shown on the webpage.</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="card">
+
+            <h2>💻 Example</h2>
+
+            <pre>
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>My First Website</title>
+</head>
+
+<body>
+
+<h1>Welcome</h1>
+
+<p>This is my first webpage.</p>
+
+</body>
+
+</html>
+</pre>
+
+        </div>
+
+        <div class="card">
+
+            <h2>💡 Tips</h2>
+
+            <ul>
+
+                <li>Always start with <b>&lt;!DOCTYPE html&gt;</b></li>
+
+                <li>Every page has one <b>&lt;html&gt;</b> tag.</li>
+
+                <li>The <b>&lt;head&gt;</b> contains page information.</li>
+
+                <li>The <b>&lt;body&gt;</b> contains everything visitors see.</li>
+
+            </ul>
+
+        </div>
+
+        <div class="card">
+
+            <h2>📚 Practice</h2>
+
+            <p>Create a webpage with:</p>
+
+            <ol>
+
+                <li>DOCTYPE</li>
+
+                <li>html</li>
+
+                <li>head</li>
+
+                <li>title</li>
+
+                <li>body</li>
+
+                <li>One heading</li>
+
+                <li>One paragraph</li>
+
+            </ol>
+
+        </div>
+
+        <div class="card">
+
+            <h2>📝 Quiz</h2>
+
+            <p>Which tag contains everything visible on a webpage?</p>
+
+            <label>
+                <input type="radio" name="quiz" value="A">
+                &lt;head&gt;
+            </label>
+
+            <br><br>
+
+            <label>
+                <input type="radio" name="quiz" value="B">
+                &lt;body&gt;
+            </label>
+
+            <br><br>
+
+            <label>
+                <input type="radio" name="quiz" value="C">
+                &lt;title&gt;
+            </label>
+
+            <br><br>
+
+            <label>
+                <input type="radio" name="quiz" value="D">
+                &lt;meta&gt;
+            </label>
+
+            <br><br>
+
+            <button onclick="checkAnswer(this)"
+                    data-correct-answer="B"
+                    data-correct-feedback="The &lt;body&gt; tag contains everything visible on the webpage."
+                    data-incorrect-feedback="Please try again.">
+                Check Answer
+            </button>
+
+            <p id="answer" class="answer"></p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>🎯 Summary</h2>
+
+            <p>
+
+                ✔ HTML documents always have the same structure.<br>
+
+                ✔ The head stores page information.<br>
+
+                ✔ The body displays webpage content.<br>
+
+                ✔ DOCTYPE tells the browser to use HTML5.
+
+            </p>
+
+        </div>
+
+        <div class="nav-buttons">
+            <a href="lesson1.html" class="btn-nav">⬅ Previous Lesson</a>
+            <a href="lesson3.html" class="btn-nav">Next Lesson ➜</a>
+        </div>
+
+    </div>
+    </main>
+
+    <!-- Footer will be loaded here by JavaScript -->
+    <div id="footer-placeholder"></div>
+
+    <script src="js/quiz.js"></script>
+
+</body>
+
+</html>

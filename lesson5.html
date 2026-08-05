@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 5 - HTML Images</title>
+
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="lesson.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="js/main.js" defer></script>
+
+</head>
+
+<body>
+
+    <header>
+        <!-- Navbar will be loaded here by JavaScript -->
+        <div id="navbar-placeholder"></div>
+    </header>
+
+    <main>
+        <div class="lesson-header">
+            <h1>HTML Course</h1>
+            <h3>Lesson 5: HTML Images</h3>
+        </div>
+
+        <div class="lesson-container">
+
+        <div class="card">
+
+            <h2>📖 What is an Image?</h2>
+
+            <p>
+
+                Images make webpages attractive and easy to understand.
+
+                HTML uses the <strong>&lt;img&gt;</strong> tag to display images.
+
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>📚 Image Syntax</h2>
+
+            <pre>
+&lt;img src="image.jpg" alt="My Image"&gt;
+</pre>
+
+        </div>
+
+        <div class="card">
+
+            <h2>📝 Image Attributes</h2>
+
+            <table>
+
+                <tr>
+                    <th>Attribute</th>
+                    <th>Description</th>
+                </tr>
+
+                <tr>
+                    <td>src</td>
+                    <td>Image file location</td>
+                </tr>
+
+                <tr>
+                    <td>alt</td>
+                    <td>Alternative text</td>
+                </tr>
+
+                <tr>
+                    <td>width</td>
+                    <td>Image width</td>
+                </tr>
+
+                <tr>
+                    <td>height</td>
+                    <td>Image height</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="card">
+
+            <h2>💻 Example Code</h2>
+
+            <pre>
+&lt;img src="cat.jpg"
+alt="Cute Cat"
+width="300"&gt;
+</pre>
+
+        </div>
+
+        <div class="card">
+
+            <h2>👀 Example Output</h2>
+
+            <img src="https://picsum.photos/300/200" class="demo-img" alt="Example Image">
+
+        </div>
+
+        <div class="card">
+
+            <h2>💡 Tips</h2>
+
+            <ul>
+
+                <li>Always write the <b>alt</b> attribute.</li>
+
+                <li>Keep image file names simple.</li>
+
+                <li>Resize large images.</li>
+
+                <li>Use JPG, PNG, SVG or WebP images.</li>
+
+            </ul>
+
+        </div>
+
+        <div class="card">
+
+            <h2>📚 Practice</h2>
+
+            <p>Create a webpage that contains:</p>
+
+            <ol>
+
+                <li>One image</li>
+
+                <li>Image width = 300px</li>
+
+                <li>Alternative text</li>
+
+                <li>Rounded corners using CSS</li>
+
+            </ol>
+
+        </div>
+
+        <div class="card">
+
+            <h2>📝 Quiz</h2>
+
+            <p>
+
+                Which HTML tag displays an image?
+
+            </p>
+
+            <label>
+
+                <input type="radio" name="quiz" value="A">
+
+                &lt;image&gt;
+
+            </label>
+
+            <br><br>
+
+            <label>
+
+                <input type="radio" name="quiz" value="B">
+
+                &lt;picture&gt;
+
+            </label>
+
+            <br><br>
+
+            <label>
+
+                <input type="radio" name="quiz" value="C">
+
+                &lt;img&gt;
+
+            </label>
+
+            <br><br>
+
+            <label>
+
+                <input type="radio" name="quiz" value="D">
+
+                &lt;photo&gt;
+
+            </label>
+
+            <br><br>
+
+            <button onclick="checkAnswer(this)"
+                    data-correct-answer="C"
+                    data-correct-feedback="The &lt;img&gt; tag displays images."
+                    data-incorrect-feedback="Please try again.">
+                Check Answer
+            </button>
+
+            <p id="answer" class="answer"></p>
+
+        </div>
+
+        <div class="card">
+
+            <h2>🎯 Summary</h2>
+
+            <p>
+
+                ✔ Images make webpages beautiful.<br>
+
+                ✔ Use the <strong>&lt;img&gt;</strong> tag.<br>
+
+                ✔ Always include <strong>src</strong> and <strong>alt</strong>.<br>
+
+                ✔ Resize images for faster websites.
+
+            </p>
+
+        </div>
+
+        <div class="nav-buttons">
+            <a href="lesson4.html" class="btn-nav">⬅ Previous Lesson</a>
+            <a href="lesson6.html" class="btn-nav">Next Lesson ➜</a>
+        </div>
+
+        </div>
+    </main>
+
+    <!-- Footer will be loaded here by JavaScript -->
+    <div id="footer-placeholder"></div>
+
+    <script src="js/quiz.js"></script>
+
+</body>
+
+</html>

@@ -1,24 +1,45 @@
-<html>
-    <head>
-        <title>My Web Page</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <h1>Welcome to My Web Page</h1>
-        <p>This is a simple web page.</p>
-        <button onclick="myButton()">Click Me</button>
-        <button onclick="Play_Boy()">Play Boy Audio</button>
+<!DOCTYPE html>
+<html lang="ja">
 
-        <!-- counter section -->
-        <p id="mycounter">0</p>
-        <button onclick="increment()">+1</button>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeKhmer Learning</title>
+    <link rel="stylesheet" href="index.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/theme-toggle.js" defer></script>
+</head>
 
-        <button onclick="decrement()">-1</button>
-        <button onclick="reset()">Reset</button>
+<body>
 
+    <header id="home" class="main">
+        <!-- Navbar will be loaded here by JavaScript -->
+        <div id="navbar-placeholder"></div>
 
-        <script src="main.js"></script>
-        <script src="counter.js"></script>
-    </body>
+        <div class="content">
+
+            <div class="hero">
+                <h1>
+                    Web Design &amp; <br>
+                    <span>Development</span><br>
+                    Course
+                </h1>
+
+                <p class="par">
+                    わかりやすくシンプルなレッスンで、プログラミング学習を始めましょう。<br>
+                    基礎から応用まで、モダンな学習スタイルで楽しく身につけられます。
+                </p>
+
+            </div>
+
+        </div>
+    </header>
+    
+    <!-- Footer will be loaded here by JavaScript -->
+    <div id="footer-placeholder"></div>
+
+</body>
+
 </html>

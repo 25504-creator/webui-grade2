@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Lesson 9 - Loops</title>
+
+    <style>
+        :root {
+            --bg-navy: #0d1b2a;
+            --bg-navy-deep: #0a1622;
+            --accent-lime: #b7ff4d;
+            --accent-lime-dark: #8fe022;
+            --card-bg: #13253a;
+            --card-border: rgba(255, 255, 255, 0.08);
+            --text-white: #ffffff;
+            --text-dim: #9fb0c3;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Poppins", Arial, sans-serif;
+            background: var(--bg-navy);
+            color: var(--text-white);
+        }
+
+        header {
+            background: var(--bg-navy-deep);
+            color: var(--text-white);
+            text-align: center;
+            padding: 25px;
+        }
+
+        header h3 {
+            color: var(--accent-lime);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 30px auto;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 14px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
+        }
+
+        h2, h3 {
+            color: var(--accent-lime);
+        }
+
+        pre {
+            background: #222;
+            color: #00ff66;
+            padding: 15px;
+            border-radius: 10px;
+            overflow: auto;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        button {
+            background: var(--accent-lime);
+            color: #0a1622;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 999px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 700;
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background: var(--accent-lime-dark);
+            transform: translateY(-1px);
+        }
+
+        .answer {
+            display: none;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        <h1>CodeKhmer Learning</h1>
+        <h1>Java Course</h1>
+        <h3>Lesson 9: Loops</h3>
+    </header>
+
+    <div class="container">
+
+        <div class="card">
+            <h2>🔄 What are Loops?</h2>
+            <p>
+                Loops are used to execute a block of code repeatedly as long as a certain condition is met. They are essential for automating repetitive tasks.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>1. The <code>while</code> Loop</h3>
+            <p>The <code>while</code> loop executes a block of code as long as its condition is true.</p>
+            <pre>
+int i = 0;
+while (i < 5) {
+    System.out.println(i);
+    i++; // Increment i, otherwise the loop will run forever!
+}
+// Output: 0, 1, 2, 3, 4
+</pre>
+        </div>
+
+        <div class="card">
+            <h3>2. The <code>for</code> Loop</h3>
+            <p>The <code>for</code> loop is often used when you know exactly how many times you want to loop.</p>
+            <p>It consists of three parts: initialization, condition, and increment/decrement.</p>
+            <pre>
+// for (initialization; condition; increment)
+for (int i = 0; i < 5; i++) {
+    System.out.println(i);
+}
+// Output: 0, 1, 2, 3, 4
+</pre>
+        </div>
+
+        <div class="card">
+            <h3>3. The <code>do-while</code> Loop</h3>
+            <p>This loop is similar to the <code>while</code> loop, but it will always execute the code block at least once, because the condition is checked at the end.</p>
+            <pre>
+int i = 0;
+do {
+    System.out.println(i);
+    i++;
+} while (i < 5);
+// Output: 0, 1, 2, 3, 4
+</pre>
+        </div>
+
+        <div class="card">
+            <h2>📚 Practice</h2>
+            <p>Use a <code>for</code> loop to print all the even numbers from 2 to 20.</p>
+            <p>Hint: You can use the modulus operator (<code>%</code>) to check if a number is even, or you can increment your loop variable by 2.</p>
+        </div>
+
+        <div class="card">
+            <h2>📝 Quiz</h2>
+            <p>
+                If you want to run a block of code exactly 10 times, which loop is generally the most suitable?
+            </p>
+            <label><input type="radio" name="quiz" value="A"> <code>while</code> loop</label><br><br>
+            <label><input type="radio" name="quiz" value="B"> <code>for</code> loop</label><br><br>
+            <label><input type="radio" name="quiz" value="C"> <code>do-while</code> loop</label><br><br>
+            <label><input type="radio" name="quiz" value="D"> <code>if</code> statement</label><br><br>
+
+            <button onclick="checkAnswer()">Check Answer</button> 
+
+            <p id="answer" class="answer"></p>
+        </div>
+
+        <div class="card">
+            <h2>🎯 Summary</h2>
+            <p>
+                ✔ Loops execute code repeatedly.<br>
+                ✔ The <code>while</code> loop runs as long as a condition is true.<br>
+                ✔ The <code>for</code> loop is ideal for a fixed number of iterations.<br>
+                ✔ The <code>do-while</code> loop always executes at least once.
+            </p>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="java_lesson8.html" class="btn-nav">⬅ Previous Lesson</a>
+            <a href="java_lesson10.html" class="btn-nav">Next Lesson ➜</a>
+        </div>
+
+    </div>
+
+    <script>
+        function checkAnswer() {
+            const answer = document.querySelector('input[name="quiz"]:checked');
+            const result = document.getElementById("answer");
+
+            if (!answer) {
+                result.style.display = "block";
+                result.style.color = "red";
+                result.innerHTML = "❌ Please select an answer.";
+                return;
+            }
+
+            if (answer.value === "B") {
+                result.style.display = "block";
+                result.style.color = "green";
+                result.innerHTML = "✅ Correct! The `for` loop is perfect when you know the number of iterations in advance.";
+            } else {
+                result.style.display = "block";
+                result.style.color = "red";
+                result.innerHTML = "❌ Incorrect. While other loops can work, `for` is the most conventional choice here.";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

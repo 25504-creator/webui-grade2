@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Lesson 12 - Object-Oriented Programming</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="lesson.css">
+
+</head>
+
+<body>
+
+    <div class="lesson-container">
+
+        <div class="card">
+            <h2>🏛️ What is OOP?</h2>
+            <p>
+                Object-Oriented Programming (OOP) is a programming paradigm based on the concept of "objects", which can contain data (attributes or properties) and code (methods or procedures). The main goal of OOP is to organize complex programs into simple, reusable pieces of code (objects).
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>Classes and Objects</h2>
+            <ul>
+                <li><strong>Class:</strong> A blueprint for creating objects. For example, a <code>Car</code> class would be a blueprint describing the properties (like color, brand) and methods (like drive, brake) that all cars have.</li>
+                <li><strong>Object:</strong> An instance of a class. If <code>Car</code> is the class, then a specific red Toyota is an object of that class.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>💻 Example: Creating a Class</h2>
+            <p>Let's create a <code>Dog</code> class in a file named `Dog.java`.</p>
+            <pre>
+// Dog.java
+public class Dog {
+    // Attributes (data)
+    String name;
+    int age;
+
+    // Method (behavior)
+    public void bark() {
+        System.out.println(name + " says: Woof!");
+    }
+}
+</pre>
+        </div>
+
+        <div class="card">
+            <h2>Creating and Using Objects</h2>
+            <p>Now, in our `Main.java` file, we can create and use objects of our <code>Dog</code> class.</p>
+            <pre>
+// Main.java
+public class Main {
+    public static void main(String[] args) {
+        // Create a new Dog object
+        Dog myDog = new Dog();
+
+        // Set its attributes
+        myDog.name = "Lucky";
+        myDog.age = 3;
+
+        // Call its method
+        myDog.bark(); // Output: Lucky says: Woof!
+
+        // Create another Dog object
+        Dog anotherDog = new Dog();
+        anotherDog.name = "Spot";
+        anotherDog.bark(); // Output: Spot says: Woof!
+    }
+}
+</pre>
+        </div>
+
+        <div class="card">
+            <h2>Constructors</h2>
+            <p>A constructor is a special method that is used to initialize objects. It is called when an object is created. It must have the same name as the class and does not have a return type.</p>
+            <pre>
+// Inside the Dog.java class
+public class Dog {
+    String name;
+
+    // Constructor
+    public Dog(String dogName) {
+        name = dogName; // Set the name when the object is created
+    }
+
+    public void bark() {
+        System.out.println(name + " says: Woof!");
+    }
+}
+
+// In Main.java, creating an object now requires an argument
+Dog myDog = new Dog("Lucky");
+myDog.bark(); // Output: Lucky says: Woof!
+</pre>
+        </div>
+
+        <div class="card">
+            <h2>📚 Practice</h2>
+            <p>Create a `Student` class with attributes for `name` (String) and `grade` (int). Create a method called `displayInfo()` that prints the student's name and grade. In your `main` method, create two different student objects and call their `displayInfo()` methods.</p>
+        </div>
+
+        <div class="card">
+            <h2>📝 Quiz</h2>
+            <p>
+                In OOP, what is a "blueprint" for creating objects called?
+            </p>
+            <label><input type="radio" name="quiz" value="A"> Object</label><br><br>
+            <label><input type="radio" name="quiz" value="B"> Method</label><br><br>
+            <label><input type="radio" name="quiz" value="C"> Class</label><br><br>
+            <label><input type="radio" name="quiz" value="D"> Constructor</label><br><br>
+
+            <button onclick="checkAnswer(this)" data-correct-answer="C" data-correct-feedback="A class is the blueprint from which individual objects are created." data-incorrect-feedback="An object is an instance of a class, not the blueprint itself.">Check Answer</button> 
+
+            <p id="answer" class="answer"></p>
+        </div>
+
+        <div class="card">
+            <h2>🎯 Summary</h2>
+            <p>
+                ✔ OOP helps organize code using objects.<br>
+                ✔ A <strong>Class</strong> is a template or blueprint.<br>
+                ✔ An <strong>Object</strong> is an instance of a class.<br>
+                ✔ Objects have <strong>attributes</strong> (data) and <strong>methods</strong> (behavior).<br>
+                ✔ A <strong>constructor</strong> is a special method for creating and initializing an object.
+            </p>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="java_lesson11.html" class="btn-nav">⬅ Previous Lesson</a>
+            <a href="java_lesson13.html" class="btn-nav">Next Lesson ➜</a>
+        </div>
+
+    </div>
+
+    <script src="js/quiz.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Course</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="home.css"> 
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="js/home.js"></script>
+    <script src="js/theme-toggle.js" defer></script>
+    <style>
+        /* Keyframe Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Apply Animations */
+        header h1 {
+            animation: fadeIn 1.2s ease-in-out;
+        }
+
+        .card {
+            opacity: 0; /* Start hidden */
+            animation: fadeInUp 0.6s ease-out forwards;
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* For hover effect */
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .card button:hover {
+            animation: pulse 0.5s ease;
+        }
+
+        /* Staggered Animation Delay for Lesson Cards */
+        .lesson-grid .card:nth-child(1) { animation-delay: 0.1s; }
+        .lesson-grid .card:nth-child(2) { animation-delay: 0.2s; }
+        .lesson-grid .card:nth-child(3) { animation-delay: 0.3s; }
+        .lesson-grid .card:nth-child(4) { animation-delay: 0.4s; }
+        .lesson-grid .card:nth-child(5) { animation-delay: 0.5s; }
+        .lesson-grid .card:nth-child(6) { animation-delay: 0.6s; }
+        .courses-grid .card:nth-child(1), .lesson-grid .card:nth-child(7) { animation-delay: 0.1s; }
+        .courses-grid .card:nth-child(2), .lesson-grid .card:nth-child(8) { animation-delay: 0.2s; }
+        .courses-grid .card:nth-child(3), .lesson-grid .card:nth-child(9) { animation-delay: 0.3s; }
+        .courses-grid .card:nth-child(4), .lesson-grid .card:nth-child(10) { animation-delay: 0.4s; }
+        .courses-grid .card:nth-child(5), .lesson-grid .card:nth-child(11) { animation-delay: 0.5s; }
+        .courses-grid .card:nth-child(6), .lesson-grid .card:nth-child(12) { animation-delay: 0.6s; }
+
+    </style>
+    
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar"> <div class="icon">
+            <a href="index.html" class="logo-link"><h2 class="logo">CodeKhmer<br>Learning</h2></a>
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li> 
+                <li><a href="services.html">Services</a></li> 
+                <li><a href="design.html">Design</a></li> 
+                <li><a href="careers.html">Careers</a></li> 
+                <li><a href="pricing.html">Pricing</a></li> 
+                <li><a href="contact.html">Contact</a></li> 
+            </ul>
+        </div>
+        <div class="search">
+            <input id="homeSearchInput" class="srch" type="search" placeholder="Search...">
+            <button id="homeSearchButton" class="btn">Search</button>
+        </div>
+        <div class="user-auth">
+            <a href="Login.html" class="login-btn">Login</a>
+            <div class="user-profile" style="display: none;">
+                <div class="avatar"><ion-icon name="person-outline"></ion-icon></div>
+                <div class="dropdown-menu">
+                    <div class="dropdown-header">
+                        Signed in as <strong id="profileUsername"></strong>
+                    </div>
+                    <a href="#" id="logoutButton" class="dropdown-item">Logout</a>
+                </div>
+            </div>
+        </div>
+        <div class="theme-switch-wrapper">
+            <label class="theme-switch" for="theme-toggle-checkbox">
+                <input type="checkbox" id="theme-toggle-checkbox" />
+                <div class="slider">
+                    <ion-icon name="moon-outline" class="moon-icon"></ion-icon>
+                    <ion-icon name="sunny-outline" class="sun-icon"></ion-icon>
+                </div>
+            </label>
+        </div>
+    </nav>
+    </header>
+    <main>
+    <div class="body-wrapper">
+
+        <section class="home-hero-section">
+            <div class="header-container">
+                <h1 onclick="showHome()">Welcome to <span>CodeKhmer Learning</span></h1>
+                <p>Start learning programming from beginner to advanced.</p>
+            </div>
+        </section>
+
+        <div id="mainPortal" class="main-portal">
+            <div class="course-menu">
+                <button class="course-menu-btn html-btn" onclick="showHTML()">
+                    <span>HTML Course</span>
+                </button>
+                <button class="course-menu-btn java-btn" onclick="showJava()">
+                    <span>Java Course</span>
+                </button>
+            </div>
+
+            <div class="container">
+                <div class="section-headline">
+                    <h2>Build skills that stand out</h2>
+                    <p>Explore our most popular subjects and start learning the skills you need for the future.</p>
+                </div>
+
+                <div class="skills-grid">
+                    <button class="skill-btn searchable-item"
+                        onclick="openSkillModal('Code Foundations', 'code-working-outline')"><ion-icon
+                            name="code-working-outline"></ion-icon> Code Foundations</button>
+                    <button class="skill-btn" onclick="openSkillModal('Python', 'logo-python')"><ion-icon
+                            name="logo-python"></ion-icon> Python</button>
+                    <button class="skill-btn" onclick="openSkillModal('HTML & CSS', 'logo-html5')"><ion-icon
+                            name="logo-html5"></ion-icon> HTML & CSS</button>
+                    <button class="skill-btn" onclick="openSkillModal('Data Science', 'bar-chart-outline')"><ion-icon
+                            name="bar-chart-outline"></ion-icon> Data Science</button>
+                    <button class="skill-btn"
+                        onclick="openSkillModal('Professional Skills', 'briefcase-outline')"><ion-icon
+                            name="briefcase-outline"></ion-icon> Professional Skills</button>
+                    <button class="skill-btn" onclick="openSkillModal('Java', 'logo-java')"><ion-icon
+                            name="logo-java"></ion-icon> Java</button>
+                    <button class="skill-btn" onclick="openSkillModal('Web Development', 'globe-outline')"><ion-icon
+                            name="globe-outline"></ion-icon> Web Development</button>
+                    <button class="skill-btn" onclick="openSkillModal('Data Analytics', 'pie-chart-outline')"><ion-icon
+                            name="pie-chart-outline"></ion-icon> Data Analytics</button>
+                    <button class="skill-btn" onclick="openSkillModal('Interview Prep', 'checkbox-outline')"><ion-icon
+                            name="checkbox-outline"></ion-icon> Interview Prep</button>
+                    <button class="skill-btn" onclick="openSkillModal('JavaScript', 'logo-javascript')"><ion-icon
+                            name="logo-javascript"></ion-icon> JavaScript</button>
+                    <button class="skill-btn" onclick="openSkillModal('Web Design', 'color-palette-outline')"><ion-icon
+                            name="color-palette-outline"></ion-icon> Web Design</button>
+                    <button class="skill-btn"
+                        onclick="openSkillModal('Machine Learning', 'hardware-chip-outline')"><ion-icon
+                            name="hardware-chip-outline"></ion-icon> Machine Learning</button>
+                    <button class="skill-btn" onclick="openSkillModal('Computer Science', 'desktop-outline')"><ion-icon
+                            name="desktop-outline"></ion-icon> Computer Science</button>
+                    <button class="skill-btn" onclick="openSkillModal('C++', 'add-circle-outline')"><ion-icon
+                            name="add-circle-outline"></ion-icon> C++</button>
+                    <button class="skill-btn"
+                        onclick="openSkillModal('Mobile Development', 'phone-portrait-outline')"><ion-icon
+                            name="phone-portrait-outline"></ion-icon> Mobile Development</button>
+                    <button class="skill-btn" onclick="openSkillModal('AI', 'sparkles-outline')"><ion-icon
+                            name="sparkles-outline"></ion-icon> AI</button>
+                    <button class="skill-btn" onclick="openSkillModal('IT', 'construct-outline')"><ion-icon
+                            name="construct-outline"></ion-icon> IT</button>
+                    <button class="skill-btn" onclick="openSkillModal('C#', 'apps-outline')"><ion-icon
+                            name="apps-outline"></ion-icon> C#</button>
+                    <button class="skill-btn"
+                        onclick="openSkillModal('Game Development', 'game-controller-outline')"><ion-icon
+                            name="game-controller-outline"></ion-icon> Game Development</button>
+                    <button class="skill-btn" onclick="openSkillModal('Cloud Computing', 'cloud-outline')"><ion-icon
+                            name="cloud-outline"></ion-icon> Cloud Computing</button>
+                    <button class="skill-btn"
+                        onclick="openSkillModal('Cybersecurity', 'shield-checkmark-outline')"><ion-icon
+                            name="shield-checkmark-outline"></ion-icon> Cybersecurity</button>
+                    <button class="skill-btn" onclick="openSkillModal('Go', 'rocket-outline')"><ion-icon
+                            name="rocket-outline"></ion-icon> Go</button>
+                    <button class="skill-btn" onclick="openSkillModal('DevOps', 'settings-outline')"><ion-icon
+                            name="settings-outline"></ion-icon> DevOps</button>
+                    <button class="skill-btn" onclick="openSkillModal('Certification Prep', 'ribbon-outline')"><ion-icon
+                            name="ribbon-outline"></ion-icon> Certification Prep</button>
+                </div>
+
+                <!-- Modal Interface -->
+                <div id="skillModal" class="modal" onclick="closeSkillModal()">
+                    <div class="modal-content" onclick="event.stopPropagation()">
+                        <span class="close-btn" onclick="closeSkillModal()">&times;</span>
+                        <div class="modal-header">
+                            <ion-icon id="modalIcon" name="code-working-outline"></ion-icon>
+                            <h3 id="modalTitle">Skill Title</h3>
+                        </div>
+                        <div class="modal-body">
+                            <h4>Overview / 概要</h4>
+                            <p id="modalOverview">Description goes here...</p>
+
+                            <h4>What you will learn / 学習内容</h4>
+                            <p id="modalLearning">Topics go here...</p>
+
+                            <h4>Career Paths / 目指せるキャリア</h4>
+                            <p id="modalCareer">Careers go here...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="search-bar-container">
+                    <h3>No matter your goal, we have something for you</h3>
+                    <div class="search-input-wrapper">
+                        <input type="text" placeholder="What do you want to learn?">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </div>
+                </div>
+
+                <div class="courses-header">
+                    <h3>人気コース (Popular Courses)</h3>
+                </div>
+
+                <div class="courses-grid">
+                    <!-- HTML Course Card -->
+                    <div class="course-card searchable-item html-card" onclick="showHTML()">
+                        <ion-icon name="logo-html5"></ion-icon>
+                        <h4>HTML Course</h4>
+                        <p>The language for building web pages. Start from scratch and build your first website.</p>
+                        <span class="badge">Beginner Friendly</span>
+                    </div>
+
+                    <!-- Java Course Card -->
+                    <div class="course-card searchable-item java-card" onclick="showJava()">
+                        <ion-icon name="logo-java"></ion-icon>
+                        <h4>Java Course</h4>
+                        <p>A powerful, object-oriented language for large-scale applications and Android development.</p>
+                        <span class="badge">Beginner Friendly</span>
+                    </div>
+                </div>
+
+                <div class="progress-section">
+                    <div class="progress-info">
+                        <span style="color: var(--accent-lime); font-weight: bold; text-transform: uppercase;">The
+                            Experience</span>
+                        <h3>Designed for progress</h3>
+                        <p><strong>Turn ambition into action:</strong> Pass guided paths and interactive lessons no
+                            matter your skill level.</p>
+                        <p><strong>Gain hands-on expertise:</strong> Build portfolio-ready apps and test skills in
+                            integrated programming environments.</p>
+                    </div>
+                    <div class="progress-img-placeholder">
+                        <img src="photo3.jpg" alt="CodeKhmer Learning Experience" class="progress-actual-img">
+                    </div>
+                </div>
+
+                <div class="platform-section">
+                    <!-- ផ្នែកចំណងជើង -->
+                    <div class="section-headline">
+                        <span
+                            style="color: var(--accent-lime); font-weight: bold; text-transform: uppercase; letter-spacing: 1px; font-size: 14px;">The
+                            Platform</span>
+                        <h2 style="font-size: 32px; font-weight: 800; margin-top: 5px; margin-bottom: 20px;">Learn by
+                            doing</h2>
+                        <p
+                            style="color: var(--text-dim); max-width: 600px; margin-bottom: 30px; line-height: 1.6; justify-content: center; display: flex; margin-left: auto; margin-right: auto;">
+                            No complicated setup required. Write real code and see your results instantly right in your
+                            browser with our intelligent interactive workspace. </p>
+                    </div>
+
+                    <!-- ផ្ទាំង Workspace កូដពិតៗ -->
+                    <div class="workspace-container">
+                        <!-- របារខាងលើ (Header) -->
+                        <div class="workspace-header">
+                            <div class="dots-group">
+                                <div class="dot dot-red"></div>
+                                <div class="dot dot-yellow"></div>
+                                <div class="dot dot-green"></div>
+                            </div>
+                            <div class="tab-title">index.js — CodeKhmer IDE</div>
+                        </div>
+
+                        <div class="workspace-body">
+                            <!-- បន្ថែម Sidebar ដូចកម្មវិធីសរសេរកូដពិត -->
+                            <div class="file-explorer">
+                                <div class="folder-title">📁 PROJECT</div>
+                                <div class="file-item active">📄 index.js</div>
+                                <div class="file-item">📄 style.css</div>
+                                <div class="file-item">📄 index.html</div>
+                            </div>
+
+                            <!-- ផ្នែកសរសេរកូដ (Editor) -->
+                            <div class="code-editor">
+                                <div class="line-numbers">
+                                    <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
+                                </div>
+                                <div class="code-lines">
+                                    <p><span style="color: #e53935; font-weight: 600;">const</span> <span style="color: #9ca3af;">learning</span> = () => {</p>
+                                    <p style="padding-left: 24px;"><span
+                                            style="color: #e53935; font-weight: 600;">const</span> status = <span
+                                            style="color: #ffffff;">"Success"</span>;</p>
+                                    <p style="padding-left: 24px;"><span
+                                            style="color: #9ca3af;">console</span>.log(<span
+                                            style="color: #ffffff;">"Hello CodeKhmer!"</span>);</p>
+                                    <p style="padding-left: 24px;"><span
+                                            style="color: #e53935; font-weight: 600;">return</span> status;
+                                    </p>
+                                    <p>};</p>
+                                </div>
+                            </div>
+
+                            <!-- ផ្នែកបង្ហាញលទ្ធផល (Preview/Console) -->
+                            <div class="code-preview">
+                                <div class="console-header">Terminal / Output</div>
+                                <div class="console-output">
+                                    <span style="color: var(--accent-lime); font-weight: bold;">▶</span> Hello CodeKhmer!
+                                    <span style="color: var(--text-dim); display: block; margin-top: 5px;">⚡ Process finished
+                                        with status: "Success"</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ===== TESTIMONIALS SECTION ===== -->
+                    <div class="testimonials-section">
+                        <div class="section-headline">
+                            <h2 style="font-family: monospace; letter-spacing: 1px;">Real success from real learners
+                            </h2>
+                            <p style="color: var(--text-dim); max-width: 600px; margin: 10px auto 40px auto; font-size: 15px;">
+                                With the right skills, anything's possible. See how real learners are evolving their
+                                careers with CodeKhmer.
+                            </p>
+                        </div>
+
+                        <div class="testimonials-grid">
+                            <!-- Card 1 -->
+                            <div class="testimonial-card card-lime">
+                                <div class="card-inner">
+                                    <div class="user-img-box">
+                                        <img src="photo4.jpg" alt="Learner">
+                                    </div>
+                                    <div class="card-content">
+                                        <span class="quote-icon">“</span>
+                                        <p class="quote-text">I feel like I've gained a valuable skill set that looks
+                                            great on my CV. You don't have to change careers; you can make your current
+                                            job better, more efficient, and make your life easier.</p>
+                                        <div class="user-info">
+                                            <h4 class="user-name">Aditya Karda</h4>
+                                            <p class="user-role">Research Scientist</p>
+                                            <p class="user-location">India</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Card 2 -->
+                            <div class="testimonial-card card-blue">
+                                <div class="card-inner">
+                                    <div class="user-img-box">
+                                        <img src="photo5.jpg" alt="Learner">
+                                    </div>
+                                    <div class="card-content">
+                                        <span class="quote-icon">“</span>
+                                        <p class="quote-text">I wasted quite a bit of time before learning about
+                                            CodeKhmer. Anyone who would come up to me, I would direct them straight to
+                                            CodeKhmer. Don't waste any time on anyone else; just start there.</p>
+                                        <div class="user-info">
+                                            <h4 class="user-name">Chhin Chanthea</h4>
+                                            <p class="user-role">Systems and Applications Advisor</p>
+                                            <p class="user-location">Cambodia</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Card 3 -->
+                            <div class="testimonial-card card-yellow">
+                                <div class="card-inner">
+                                    <div class="user-img-box">
+                                        <img src="photo6.jpg" alt="Learner">
+                                    </div>
+                                    <div class="card-content">
+                                        <span class="quote-icon">“</span>
+                                        <p class="quote-text">CodeKhmer played into the whole gamification aspect
+                                            because of how user-friendly it is and the completion of courses and
+                                            modules. Completing a module felt like an achievement.</p>
+                                        <div class="user-info">
+                                            <h4 class="user-name">Ekbal Hossin</h4>
+                                            <p class="user-role">SOC Security Specialist</p>
+                                            <p class="user-location">Bangladesh</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="htmlCourse">
+            <div class="container">
+                <div class="back-btn-container">
+                    <button class="back-btn" onclick="showHome()">← Back to Home</button>
+                </div>
+                <div class="section-headline">
+                    <h2>HTML Course Lessons</h2>
+                </div>
+                <div class="lesson-grid">
+                    <div class="card searchable-item">
+                        <h2>Lesson 1 : What is HTML?</h2>
+                        <p>Learn what HTML is and why it is used to build websites.</p>
+                        <button onclick="window.location.href='lesson1.html'">Start Lesson</button>
+                    </div>
+                    <div class="card searchable-item">
+                        <h2>Lesson 2 : HTML Document Structure</h2>
+                        <p>Learn about &lt;!DOCTYPE&gt;, &lt;html&gt;, &lt;head&gt;, and &lt;body&gt;.</p>
+                        <button onclick="window.location.href='lesson2.html'">Start Lesson</button>
+                    </div>
+                    <div class="card searchable-item">
+                        <h2>Lesson 3 : Headings & Paragraphs</h2>
+                        <p>Use h1-h6 headings and paragraph tags.</p>
+                        <button onclick="window.location.href='lesson3.html'">Start Lesson</button>
+                    </div>
+                    <div class="card searchable-item">
+                        <h2>Lesson 4 : Links</h2>
+                        <p>Create hyperlinks using the &lt;a&gt; tag.</p>
+                        <button onclick="window.location.href='lesson4.html'">Start Lesson</button>
+                    </div>
+                    <div class="card searchable-item">
+                        <h2>Lesson 5 : Images</h2>
+                        <p>Insert and resize images using the &lt;img&gt; tag.</p>
+                        <button onclick="window.location.href='lesson5.html'">Start Lesson</button>
+                    </div>
+                    <div class="card searchable-item">
+                        <h2>Lesson 6 : Lists</h2>
+                        <p>Create ordered, unordered, and description lists.</p>
+                        <button onclick="window.location.href='lesson6.html'">Start Lesson</button>
+                    </div>
+                    <div class="card searchable-item">
+                        <h2>Lesson 7 : Lists</h2>
+                        <p>Create ordered, unordered, and description lists.</p>
+                        <button onclick="window.location.href='lesson7.html'">Start Lesson</button>
+                    </div>
+                    <div class="card searchable-item" id="lesson8-card">
+                        <h2>Lesson 8 : Text Formatting</h2>
+                        <p>Learn &lt;b&gt;, &lt;strong&gt;, &lt;i&gt;, &lt;em&gt;, &lt;mark&gt; and more.</p>
+                        <button onclick="window.location.href='lesson8.html'">Start Lesson</button>
+                    </div>
+                    <div class="card searchable-item">
+                        <h2>Lesson 9 : Forms</h2>
+                        <p>Create forms using input, select, textarea, and button.</p>
+                        <button onclick="window.location.href='lesson9.html'">Start Lesson</button>
+                    </div>
+                    <div class="card searchable-item">
+                        <h2>Lesson 10 : Audio & Video</h2>
+                        <p>Embed audio and video into webpages.</p>
+                        <button onclick="window.location.href='lesson10.html'">Start Lesson</button>
+                    </div>
+                    <div class="card searchable-item">
+                        <h2>Lesson 11 : Semantic HTML</h2>
+                        <p>Use header, nav, main, article, section, aside, and footer.</p>
+                        <button onclick="window.location.href='lesson11.html'">Start Lesson</button>
+                    </div>
+                    <div class="card searchable-item">
+                        <h2>Lesson 12 : HTML5 Features</h2>
+                        <p>Learn new HTML5 elements and APIs.</p>
+                        <button onclick="window.location.href='lesson12.html'">Start Lesson</button>
+                    </div>
+                    <div class="card searchable-item">
+                        <h2>Lesson 13 : Responsive Images</h2>
+                        <p>Use picture and srcset for responsive design.</p>
+                        <button onclick="window.location.href='lesson13.html'">Start Lesson</button>
+                    </div>
+                    <div class="card searchable-item">
+                        <h2>Lesson 14 : Best Practices</h2>
+                        <p>Write clean and accessible HTML.</p>
+                        <button onclick="window.location.href='lesson14.html'">Start Lesson</button>
+                    </div>
+                    <div class="card searchable-item">
+                        <h2>Lesson 15 : HTML Mini Project</h2>
+                        <p>Build your first complete website.</p>
+                        <button onclick="window.location.href='lesson15.html'">Start Lesson</button>
+                    </div>
+                </div>
+                <div id="htmlNoResults" class="no-results-message" style="display: none;">
+                    <p>No HTML lessons found matching your search.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="javaCourse">
+            <div class="container1">
+                <div class="back-btn-container">
+                    <button class="back-btn" onclick="showHome()">← Back to Home</button>
+                </div>
+                <div class="section-headline">
+                    <h2>Java Course Lessons</h2>
+                </div>
+                <div class="lesson-grid">
+                    <div class="card searchable-item">
+                        <h2>Lesson 1 : Introduction to Java</h2>
+                        <p>Learn what Java is and where it is used.</p>
+                        <button onclick="window.location.href='java_lesson1.html'">Start Lesson</button>
+                    </div>
+                    <div class="card searchable-item">
+                        <h2>Lesson 2 : Installing Java & IDE</h2>
+                        <p>Install JDK and Visual Studio Code or Eclipse.</p>
+                        <button onclick="window.location.href='java_lesson2.html'">Start Lesson</button>
+                    </div>
+                    <div class="card searchable-item">
+                        <h2>Lesson 3 : First Java Program</h2>
+                        <p>Create and run your first Java application.</p>
+                        <button onclick="window.location.href='java_lesson3.html'">Start Lesson</button>
+                    </div>
+                    <div class="card searchable-item">
+                        <h2>Lesson 4 : Variables & Data Types</h2>
+                        <p>Learn int, double, char, boolean, and String.</p>
+                        <button onclick="window.location.href='java_lesson4.html'">Start Lesson</button>
+                    </div>
+                    <div class="card searchable-item">
+                        <h2>Lesson 5 : Operators</h2>
+                        <p>Arithmetic, comparison, logical, and assignment operators.</p>
+                        <button onclick="window.location.href='java_lesson5.html'">Start Lesson</button>
+                    </div>
+                    <div class="card searchable-item">
+                        <h2>Lesson 6 : Input & Output</h2>
+                        <p>Use Scanner for user input.</p>
+                        <button onclick="window.location.href='java_lesson6.html'">Start Lesson</button>
+                    </div>
+                    <div class="card searchable-item">
+                        <h2>Lesson 7 : If Statement</h2>
+                        <p>Make decisions using if, else if, and else.</p>
+                        <button onclick="window.location.href='java_lesson7.html'">Start Lesson</button>
+                    </div>
+                    <div class="card searchable-item">
+                        <h2>Lesson 8 : Switch Statement</h2>
+                        <p>Use switch-case for multiple conditions.</p>
+                        <button onclick="window.location.href='java_lesson8.html'">Start Lesson</button>
+                    </div>
+                    <div class="card searchable-item">
+                        <h2>Lesson 9 : Loops</h2>
+                        <p>Learn for, while, and do-while loops.</p>
+                        <button onclick="window.location.href='java_lesson9.html'">Start Lesson</button>
+                    </div>
+                    <div class="card searchable-item">
+                        <h2>Lesson 10 : Arrays</h2>
+                        <p>Store multiple values using arrays.</p>
+                        <button onclick="window.location.href='java_lesson10.html'">Start Lesson</button>
+                    </div>
+                    <div class="card searchable-item">
+                        <h2>Lesson 11 : Methods</h2>
+                        <p>Create reusable methods with parameters and return values.</p>
+                        <button onclick="window.location.href='java_lesson11.html'">Start Lesson</button>
+                    </div>
+                    <div class="card searchable-item">
+                        <h2>Lesson 12 : Object-Oriented Programming</h2>
+                        <p>Learn classes, objects, constructors, and methods.</p>
+                        <button onclick="window.location.href='java_lesson12.html'">Start Lesson</button>
+                    </div>
+                    <div class="card searchable-item">
+                        <h2>Lesson 13 : Inheritance & Polymorphism</h2>
+                        <p>Understand inheritance, overriding, and polymorphism.</p>
+                        <button onclick="window.location.href='java_lesson13.html'">Start Lesson</button>
+                    </div>
+                    <div class="card searchable-item">
+                        <h2>Lesson 14 : Exception Handling</h2>
+                        <p>Handle errors using try, catch, and finally.</p>
+                        <button onclick="window.location.href='java_lesson14.html'">Start Lesson</button>
+                    </div>
+                    <div class="card searchable-item">
+                        <h2>Lesson 15 : Java Final Project</h2>
+                        <p>Build a simple Java application to practice everything you've learned.</p>
+                        <button onclick="window.location.href='java_lesson15.html'">Start Lesson</button>
+                    </div>
+                </div>
+                <div id="javaNoResults" class="no-results-message" style="display: none;">
+                    <p>No Java lessons found matching your search.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== START FOOTER SECTION (English Content) ===== -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Brand Section -->
+            <div class="footer-brand">
+                <h2 class="footer-logo">CodeKhmer<br>Learning</h2>
+                <p>Start your coding journey with simple, easy-to-understand lessons, from fundamentals to advanced
+                    concepts.</p>
+            </div>
+
+            <!-- Section 1: Company & Partnerships -->
+            <div class="footer-column">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="#">Partnerships</a></li>
+                    <li><a href="#">Press & News</a></li>
+                </ul>
+            </div>
+
+            <!-- Section 3: Subjects -->
+            <div class="footer-column">
+                <h3>Subjects</h3>
+                <ul>
+                    <li><a href="#">Computer Science</a></li>
+                    <li><a href="#">Web Design & Development</a></li>
+                    <li><a href="#">Cybersecurity</a></li>
+                </ul>
+            </div>
+
+            <!-- Section 4: Languages -->
+            <div class="footer-column">
+                <h3>Languages</h3>
+                <ul>
+                    <li><a href="#">HTML & CSS</a></li>
+                    <li><a href="#">JavaScript / TypeScript</a></li>
+                    <li><a href="#">Python</a></li>
+                    <li><a href="#">PHP & MySQL</a></li>
+                    <li><a href="#">Java / C++</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Bottom Legal Bar -->
+        <div class="footer-bottom">
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+            <div class="copyright">
+                Made with ❤️ in Cambodia &copy; 2026 CodeKhmer Learning. All rights reserved.
+            </div>
+        </div>
+    </footer>
+    </div>
+    </main>
+
+    
+</body>
+
+</html>

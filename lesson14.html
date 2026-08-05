@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 14 - HTML Best Practices</title>
+
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="lesson.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="js/main.js" defer></script>
+
+</head>
+
+<body>
+
+    <header>
+        <!-- Navbar will be loaded here by JavaScript -->
+        <div id="navbar-placeholder"></div>
+    </header>
+
+    <main>
+        <div class="lesson-header">
+            <h1>HTML Course</h1>
+            <h3>Lesson 14: HTML Best Practices</h3>
+        </div>
+
+        <div class="lesson-container">
+
+        <div class="card">
+            <h2>📖 Why Best Practices Matter</h2>
+            <p>
+                Writing clean, well-structured, and semantic HTML is crucial for creating professional websites. Best practices improve accessibility, search engine optimization (SEO), maintainability, and collaboration with other developers.
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>✅ Key Best Practices</h2>
+            <ul>
+                <li>
+                    <strong>Declare a Doctype:</strong> Always start your HTML document with <code>&lt;!DOCTYPE html&gt;</code> to ensure the browser renders the page in standards mode.
+                </li>
+                <li>
+                    <strong>Use Semantic HTML:</strong> Use tags like <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, and <code>&lt;footer&gt;</code> to describe your content's structure. This helps screen readers and search engines understand your page.
+                </li>
+                <li>
+                    <strong>Provide Alternative Text for Images:</strong> Always use the <code>alt</code> attribute on <code>&lt;img&gt;</code> tags. It's vital for accessibility and is displayed if the image fails to load.
+                </li>
+                <li>
+                    <strong>Separate Content from Presentation:</strong> Use HTML for structure and CSS for styling. Avoid inline styles (e.g., <code>&lt;p style="color: red;"&gt;</code>) and outdated tags like <code>&lt;font&gt;</code> or <code>&lt;center&gt;</code>.
+                </li>
+                <li>
+                    <strong>Validate Your HTML:</strong> Use tools like the <a href="https://validator.w3.org/" target="_blank" style="color: var(--accent-lime);">W3C Markup Validation Service</a> to check for errors in your code.
+                </li>
+                <li>
+                    <strong>Use Lowercase for Tags and Attributes:</strong> While HTML is not case-sensitive, it's a common convention to write all tags and attributes in lowercase for consistency and readability.
+                </li>
+                <li>
+                    <strong>Close All Tags:</strong> Even though some tags are self-closing (e.g., <code>&lt;img&gt;</code>) or optional to close, it's good practice to close all tags properly (e.g., <code>&lt;p&gt;...&lt;/p&gt;</code>) for XHTML compatibility and clarity.
+                </li>
+                 <li>
+                    <strong>Add Comments:</strong> Use comments <code>&lt;!-- ... --&gt;</code> to explain complex parts of your code for yourself and others.
+                </li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>💻 Example of Good vs. Bad HTML</h2>
+            <p><b>Bad Practice:</b></p>
+            <pre>
+&lt;DIV CLASS="HEADER"&gt;MY WEBSITE&lt;/DIV&gt;
+&lt;br&gt;
+&lt;font color="red"&gt;Welcome!&lt;/font&gt;
+</pre>
+            <p><b>Good Practice:</b></p>
+            <pre>
+&lt;header&gt;
+    &lt;h1&gt;My Website&lt;/h1&gt;
+&lt;/header&gt;
+&lt;main&gt;
+    &lt;p class="welcome-message"&gt;Welcome!&lt;/p&gt; &lt;!-- Styled in CSS --&gt;
+&lt;/main&gt;
+</pre>
+        </div>
+
+        <div class="card">
+            <h2>📝 Quiz</h2>
+            <p>
+                Why is the `alt` attribute on an `&lt;img&gt;` tag important?
+            </p>
+            <label><input type="radio" name="quiz" value="A"> It styles the image.</label><br><br>
+            <label><input type="radio" name="quiz" value="B"> It's required for the image to load.</label><br><br>
+            <label><input type="radio" name="quiz" value="C"> It improves accessibility and is a fallback text.</label><br><br>
+            <label><input type="radio" name="quiz" value="D"> It sets the image width.</label><br><br>
+
+            <button onclick="checkAnswer(this)"
+                    data-correct-answer="C"
+                    data-correct-feedback="The `alt` attribute is crucial for screen readers and as a fallback."
+                    data-incorrect-feedback="Please try again.">
+                Check Answer
+            </button>
+
+            <p id="answer" class="answer"></p>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="lesson13.html" class="btn-nav">⬅ Previous Lesson</a>
+            <a href="lesson15.html" class="btn-nav">Next Lesson ➜</a>
+        </div>
+
+        </div>
+    </main>
+
+    <!-- Footer will be loaded here by JavaScript -->
+    <div id="footer-placeholder"></div>
+
+    <script src="js/quiz.js"></script>
+
+</body>
+
+</html>

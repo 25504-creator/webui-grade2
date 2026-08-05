@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Lesson 15 - Final Project</title>
+
+    <style>
+        :root {
+            --bg-navy: #0d1b2a;
+            --bg-navy-deep: #0a1622;
+            --accent-lime: #b7ff4d;
+            --accent-lime-dark: #8fe022;
+            --card-bg: #13253a;
+            --card-border: rgba(255, 255, 255, 0.08);
+            --text-white: #ffffff;
+            --text-dim: #9fb0c3;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Poppins", Arial, sans-serif;
+            background: var(--bg-navy);
+            color: var(--text-white);
+        }
+
+        header {
+            background: var(--bg-navy-deep);
+            color: var(--text-white);
+            text-align: center;
+            padding: 25px;
+        }
+
+        header h3 {
+            color: var(--accent-lime);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 30px auto;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 14px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
+        }
+
+        h2 {
+            color: var(--accent-lime);
+        }
+
+        pre {
+            background: #222;
+            color: #00ff66;
+            padding: 15px;
+            border-radius: 10px;
+            overflow: auto;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        button {
+            background: var(--accent-lime);
+            color: #0a1622;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 999px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 700;
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background: var(--accent-lime-dark);
+            transform: translateY(-1px);
+        }
+
+        .project-preview {
+            border: 2px solid var(--card-border);
+            border-radius: 8px;
+            padding: 20px;
+            background-color: #fff;
+            color: #333;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        <h1>CodeKhmer Learning</h1>
+        <h1>Java Course</h1>
+        <h3>Lesson 15: Java Final Project</h3>
+    </header>
+
+    <div class="container">
+
+        <div class="card">
+            <h2>🚀 Your First Java Application Project</h2>
+            <p>
+                Congratulations on completing the Java course! Now it's time to put everything you've learned into practice by building a simple console application. This project will be a "Simple Calculator".
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>📋 Project Requirements</h2>
+            <p>Create a Java console application that performs basic arithmetic operations. The program should:</p>
+            <ol>
+                <li>
+                    <strong>Welcome the user</strong> and display the available operations (+, -, *, /).
+                </li>
+                <li>
+                    <strong>Ask the user</strong> to enter the first number.
+                </li>
+                <li>
+                    <strong>Ask the user</strong> to enter an operator.
+                </li>
+                <li>
+                    <strong>Ask the user</strong> to enter the second number.
+                </li>
+                <li>
+                    <strong>Use a <code>switch</code> statement</strong> to determine which operation to perform based on the operator input.
+                </li>
+                <li>
+                    <strong>Calculate and display the result.</strong> For example: "Result: 5 + 3 = 8".
+                </li>
+                <li>
+                    <strong>Handle potential errors</strong>, such as division by zero, using a <code>try-catch</code> block.
+                </li>
+                 <li>
+                    <strong>Use a loop</strong> to ask the user if they want to perform another calculation.
+                </li>
+            </ol>
+            <p><strong>Concepts to use:</strong> Variables, Scanner, if/switch, loops, methods, and exception handling.</p>
+        </div>
+
+        <div class="card">
+            <h2>💡 High-Level Code Structure</h2>
+            <p>Here is a possible structure for your `main` method. Try to fill in the details yourself!</p>
+            <pre>
+public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+    String anotherCalculation;
+
+    do {
+        // 1. Get user input for number1, operator, number2
+
+        try {
+            double result = 0;
+            // 2. Use a switch statement to calculate the result
+            switch (operator) {
+                case '+':
+                    // add
+                    break;
+                // ... other cases
+                case '/':
+                    if (number2 == 0) {
+                        throw new ArithmeticException("Cannot divide by zero!");
+                    }
+                    // divide
+                    break;
+                default:
+                    System.out.println("Invalid operator!");
+                    continue; // Skip to the next loop iteration
+            }
+
+            // 3. Print the result
+
+        } catch (Exception e) {
+            // 4. Catch any errors and print a message
+            System.out.println("Error: " + e.getMessage());
+        }
+
+        // 5. Ask user if they want to do another calculation
+        System.out.println("Do another calculation? (yes/no)");
+        anotherCalculation = scanner.next();
+
+    } while (anotherCalculation.equalsIgnoreCase("yes"));
+
+    System.out.println("Calculator closed. Thank you!");
+    scanner.close();
+}
+</pre>
+        </div>
+
+        <div class="card">
+            <h2>🏆 Congratulations!</h2>
+            <p>
+                You have finished the introductory Java course! Building this project demonstrates your understanding of Java fundamentals. From here, you can explore more advanced topics like data structures, algorithms, file I/O, and building graphical user interfaces (GUIs). Keep practicing and building!
+            </p>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="java_lesson14.html" class="btn-nav">⬅ Previous Lesson</a>
+            <a href="home.html" class="btn-nav">🎉 Back to Home</a>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

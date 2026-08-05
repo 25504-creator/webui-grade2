@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - CodeKhmer Learning</title>
+    <link rel="stylesheet" href="index.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/theme-toggle.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const pricingToggle = document.getElementById('pricing-toggle-checkbox');
+            const monthlyPrices = document.querySelectorAll('.price-monthly');
+            const yearlyPrices = document.querySelectorAll('.price-yearly');
+
+            function updatePrices() {
+                if (pricingToggle.checked) { // Yearly
+                    monthlyPrices.forEach(p => p.style.display = 'none');
+                    yearlyPrices.forEach(p => p.style.display = 'block');
+                } else { // Monthly
+                    monthlyPrices.forEach(p => p.style.display = 'block');
+                    yearlyPrices.forEach(p => p.style.display = 'none');
+                }
+            }
+
+            pricingToggle.addEventListener('change', updatePrices);
+            updatePrices(); // Initial call
+        });
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <div id="navbar-placeholder"></div> <!-- Navbar will be loaded here by JavaScript -->
+    </header>
+
+    <main>
+        <section class="page-section">
+            <div class="section-container">
+                <h2>Simple, Transparent Pricing</h2>
+                <p>Choose the plan that's right for you and start your coding journey today. No hidden fees, ever.</p>
+
+                <div class="pricing-toggle">
+                    <span>Monthly</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="pricing-toggle-checkbox">
+                        <span class="toggle-slider"></span>
+                    </label>
+                    <span>Yearly (Save 20%)</span>
+                </div>
+
+                <div class="pricing-grid">
+                    <!-- Free Plan -->
+                    <div class="pricing-card">
+                        <h3>Free</h3>
+                        <div class="price-tag">
+                            <span class="price-amount">$0</span>
+                            <span class="price-period">/ forever</span>
+                        </div>
+                        <p class="plan-description">Get a taste of our platform with access to introductory courses.</p>
+                        <ul class="features-list">
+                            <li><ion-icon name="checkmark-outline"></ion-icon> Access to all free courses</li>
+                            <li><ion-icon name="checkmark-outline"></ion-icon> Basic community support</li>
+                            <li><ion-icon name="close-outline"></ion-icon> Pro courses & Career Paths</li>
+                            <li><ion-icon name="close-outline"></ion-icon> Professional Certifications</li>
+                        </ul>
+                        <button class="btnn-outline">Get Started</button>
+                    </div>
+
+                    <!-- Pro Monthly Plan -->
+                    <div class="pricing-card popular">
+                        <div class="popular-badge">Most Popular</div>
+                        <h3>Pro</h3>
+                        <div class="price-tag">
+                            <div class="price-monthly">
+                                <span class="price-amount">$29</span>
+                                <span class="price-period">/ month</span>
+                            </div>
+                            <div class="price-yearly" style="display: none;">
+                                <span class="price-amount">$278</span>
+                                <span class="price-period">/ year</span>
+                            </div>
+                        </div>
+                        <p class="plan-description">Unlock your full potential with unlimited access to everything.</p>
+                        <ul class="features-list">
+                            <li><ion-icon name="checkmark-outline"></ion-icon> Access to all Pro courses</li>
+                            <li><ion-icon name="checkmark-outline"></ion-icon> Guided Career Paths</li>
+                            <li><ion-icon name="checkmark-outline"></ion-icon> Professional Certifications</li>
+                            <li><ion-icon name="checkmark-outline"></ion-icon> Priority community support</li>
+                            <li><ion-icon name="checkmark-outline"></ion-icon> Exclusive projects & challenges</li>
+                        </ul>
+                        <button class="btnn">Choose Pro</button>
+                    </div>
+
+                    <!-- Teams Plan -->
+                    <div class="pricing-card">
+                        <h3>Teams</h3>
+                        <div class="price-tag">
+                            <span class="price-amount">Custom</span>
+                        </div>
+                        <p class="plan-description">Equip your team with the skills they need to innovate and grow.</p>
+                        <ul class="features-list">
+                            <li><ion-icon name="checkmark-outline"></ion-icon> All Pro features, plus:</li>
+                            <li><ion-icon name="checkmark-outline"></ion-icon> Team management dashboard</li>
+                            <li><ion-icon name="checkmark-outline"></ion-icon> Usage analytics & reporting</li>
+                            <li><ion-icon name="checkmark-outline"></ion-icon> Dedicated account manager</li>
+                        </ul>
+                        <button class="btnn-outline">Contact Sales</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="page-section alt-bg">
+            <div class="section-container">
+                <h2>Frequently Asked Questions</h2>
+                <p>Have questions? We've got answers. If you can't find what you're looking for, feel free to contact us.</p>
+
+                <div class="faq-container">
+                    <details class="faq-item">
+                        <summary>
+                            <span>What's the difference between the Free and Pro plans?</span>
+                            <ion-icon name="chevron-down-outline"></ion-icon>
+                        </summary>
+                        <div class="faq-content">
+                            <p>The Free plan gives you access to our introductory courses and basic community support. The Pro plan unlocks everything: all 200+ courses, guided Career Paths, professional certifications, exclusive projects, and priority support.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>
+                            <span>Can I cancel my Pro subscription at any time?</span>
+                            <ion-icon name="chevron-down-outline"></ion-icon>
+                        </summary>
+                        <div class="faq-content">
+                            <p>Yes, absolutely. You can cancel your monthly or yearly subscription at any time from your account settings. You will retain Pro access until the end of your current billing period.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>
+                            <span>Do I get a certificate upon completion?</span>
+                            <ion-icon name="chevron-down-outline"></ion-icon>
+                        </summary>
+                        <div class="faq-content">
+                            <p>Yes! Pro members receive a professional, shareable certificate for every Career Path and Skill Path they complete. You can add these to your LinkedIn profile and resume to showcase your skills.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== START FOOTER SECTION ===== -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand"> <h2 class="footer-logo">CodeKhmer<br>Learning</h2> <p>Start your coding journey with simple, easy-to-understand lessons, from fundamentals to advanced concepts.</p>
+                <div class="footer-social">
+                    <a href="#" title="Facebook"><ion-icon name="logo-facebook"></ion-icon></a>
+                    <a href="#" title="YouTube"><ion-icon name="logo-youtube"></ion-icon></a>
+                    <a href="#" title="GitHub"><ion-icon name="logo-github"></ion-icon></a>
+                    <a href="#" title="Telegram"><ion-icon name="paper-plane-outline"></ion-icon></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Subjects</h3>
+                <ul>
+                    <li><a href="#">Web Development</a></li>
+                    <li><a href="#">Data Science</a></li>
+                    <li><a href="#">Mobile Development</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#">Community Forum</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="copyright">
+                Made with ❤️ in Cambodia &copy; 2026 CodeKhmer Learning. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

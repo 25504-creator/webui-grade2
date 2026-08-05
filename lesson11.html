@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 11 - Semantic HTML</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="lesson.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="js/main.js" defer></script>
+
+</head>
+
+<body>
+
+    <header>
+        <!-- Navbar will be loaded here by JavaScript -->
+        <div id="navbar-placeholder"></div>
+    </header>
+
+    <main>
+        <div class="lesson-header">
+            <h1>HTML Course</h1>
+            <h3>Lesson 11: Semantic HTML</h3>
+        </div>
+
+        <div class="lesson-container">
+
+        <div class="card">
+            <h2>📖 What is Semantic HTML?</h2>
+            <p>
+                Semantic HTML tags clearly describe their meaning to both the browser and the developer.
+                For example, &lt;header&gt;, &lt;footer&gt;, and &lt;article&gt; are more descriptive than &lt;div&gt; and &lt;span&gt;.
+            </p>
+            <p>Using semantic tags improves SEO (Search Engine Optimization) and accessibility.</p>
+        </div>
+
+        <div class="card">
+            <h2>📚 Common Semantic Tags</h2>
+            <table>
+                <tr>
+                    <th>Tag</th>
+                    <th>Description</th>
+                </tr>
+                <tr><td>&lt;header&gt;</td><td>Defines a header for a document or section.</td></tr>
+                <tr><td>&lt;nav&gt;</td><td>Defines a set of navigation links.</td></tr>
+                <tr><td>&lt;main&gt;</td><td>Specifies the main content of a document.</td></tr>
+                <tr><td>&lt;section&gt;</td><td>Defines a section in a document.</td></tr>
+                <tr><td>&lt;article&gt;</td><td>Defines an independent, self-contained piece of content.</td></tr>
+                <tr><td>&lt;aside&gt;</td><td>Defines content aside from the content it is placed in (like a sidebar).</td></tr>
+                <tr><td>&lt;footer&gt;</td><td>Defines a footer for a document or section.</td></tr>
+                <tr><td>&lt;figure&gt;</td><td>Specifies self-contained content, like illustrations, diagrams, photos.</td></tr>
+                <tr><td>&lt;figcaption&gt;</td><td>Defines a caption for a &lt;figure&gt; element.</td></tr>
+            </table>
+        </div>
+
+        <div class="card">
+            <h2>💻 Example Code</h2>
+            <pre>
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;My Website&lt;/h1&gt;
+        &lt;nav&gt; ... navigation links ... &lt;/nav&gt;
+    &lt;/header&gt;
+
+    &lt;main&gt;
+        &lt;article&gt;
+            &lt;h2&gt;Article Title&lt;/h2&gt;
+            &lt;p&gt;Article content...&lt;/p&gt;
+        &lt;/article&gt;
+        &lt;aside&gt;
+            &lt;h3&gt;Related Links&lt;/h3&gt;
+        &lt;/aside&gt;
+    &lt;/main&gt;
+
+    &lt;footer&gt;
+        &lt;p&gt;Copyright 2024&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+</pre>
+        </div>
+
+        <div class="card">
+            <h2>👀 Example Layout</h2>
+            <div class="semantic-layout">
+                <header>&lt;header&gt;</header>
+                <nav>&lt;nav&gt;</nav>
+                <main>
+                    <section>&lt;section&gt; with &lt;article&gt;</section>
+                    <aside>&lt;aside&gt;</aside>
+                </main>
+                <footer>&lt;footer&gt;</footer>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>💡 Tips</h2>
+            <ul>
+                <li>Use semantic tags to give meaning to your page structure.</li>
+                <li>Don't replace all your `div`s. Use `div`s for styling and grouping when no semantic element is appropriate.</li>
+                <li>A page should typically have one `&lt;main&gt;` element.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>📚 Practice</h2>
+            <p>Structure a simple blog post page using semantic HTML, including:</p>
+            <ol>
+                <li>A header with the blog title and navigation.</li>
+                <li>A main content area.</li>
+                <li>An article for the blog post itself.</li>
+                <li>A footer with copyright information.</li>
+            </ol>
+        </div>
+
+        <div class="card">
+            <h2>📝 Quiz</h2>
+            <p>
+                Which tag defines the main content of a document?
+            </p>
+            <label><input type="radio" name="quiz" value="A"> &lt;section&gt;</label><br><br>
+            <label><input type="radio" name="quiz" value="B"> &lt;article&gt;</label><br><br>
+            <label><input type="radio" name="quiz" value="C"> &lt;main&gt;</label><br><br>
+            <label><input type="radio" name="quiz" value="D"> &lt;header&gt;</label><br><br>
+
+            <button onclick="checkAnswer(this)"
+                    data-correct-answer="C"
+                    data-correct-feedback="The &lt;main&gt; tag specifies the main content."
+                    data-incorrect-feedback="Please try again.">
+                Check Answer
+            </button>
+
+            <p id="answer" class="answer"></p>
+        </div>
+
+        <div class="card">
+            <h2>🎯 Summary</h2>
+            <p>
+                ✔ Semantic HTML uses tags that describe the content's meaning.<br>
+                ✔ It improves SEO and accessibility.<br>
+                ✔ Key tags include &lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;section&gt;, &lt;article&gt;, &lt;aside&gt;, and &lt;footer&gt;.<br>
+                ✔ A well-structured document is easier to read and maintain.
+            </p>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="lesson10.html" class="btn-nav">⬅ Previous Lesson</a>
+            <a href="lesson12.html" class="btn-nav">Next Lesson ➜</a>
+        </div>
+
+        </div>
+    </main>
+
+    <!-- Footer will be loaded here by JavaScript -->
+    <div id="footer-placeholder"></div>
+
+    <script src="js/quiz.js"></script>
+
+</body>
+
+</html>
